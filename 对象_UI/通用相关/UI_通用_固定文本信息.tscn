@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d10y4ffu67kux"]
+
+[ext_resource type="Texture2D" uid="uid://7h8bfysqpa14" path="res://图片资源/UI/通用相关/通用_固定文本框体.png" id="2_bgeiq"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="3_ajeyy"]
+[ext_resource type="Script" uid="uid://b4vj4osupvpvh" path="res://脚本/通用脚本/RichTextLabel脚本_按键滚动.gd" id="4_lw8fm"]
+
+[node name="UI_通用_固定文本信息" type="Node2D" unique_id=530647751]
+
+[node name="放大节点_3倍" type="Node2D" parent="." unique_id=393186718]
+scale = Vector2(3, 3)
+
+[node name="信息框体" type="Sprite2D" parent="放大节点_3倍" unique_id=1382232914]
+position = Vector2(64, 34)
+texture = ExtResource("2_bgeiq")
+
+[node name="固定文本显示" type="RichTextLabel" parent="." unique_id=774466891]
+z_index = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 369.0
+offset_bottom = 189.0
+pivot_offset = Vector2(-15, -15)
+mouse_filter = 2
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("3_ajeyy")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试1
+测试2
+测试3"
+script = ExtResource("4_lw8fm")
+"文本受设备类型控制" = true
+"设备类型文本1" = "技能界面固定文本1"
+"设备类型文本2" = "技能界面固定文本2"
+"滚动条宽度" = 0

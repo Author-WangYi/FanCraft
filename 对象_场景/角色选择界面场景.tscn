@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cp36vo7c8yo0o"]
+
+[ext_resource type="Texture2D" uid="uid://dlngtmkl60yup" path="res://图片资源/UI/通用相关/通用_背景图片.png" id="1_du8vn"]
+[ext_resource type="PackedScene" uid="uid://b3t27u67fyccj" path="res://对象_UI/UI_角色选择界面.tscn" id="2_du8vn"]
+[ext_resource type="Script" uid="uid://bc18ap5nys3gc" path="res://脚本/通用脚本/场景UI层脚本.gd" id="2_rccs7"]
+
+[node name="角色选择界面场景" type="Node2D" unique_id=653590078]
+
+[node name="视差背景" type="Parallax2D" parent="." unique_id=2113199029]
+
+[node name="背景图" type="Sprite2D" parent="视差背景" unique_id=1712621891]
+texture = ExtResource("1_du8vn")
+centered = false
+
+[node name="摄像机模块" type="Camera2D" parent="." unique_id=42509817]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 4000
+limit_bottom = 2000
+
+[node name="UI层" type="CanvasLayer" parent="." unique_id=1002688755]
+script = ExtResource("2_rccs7")
+"是否禁用打开菜单界面" = true
+
+[node name="UI_角色选择界面" parent="UI层" unique_id=1035214181 instance=ExtResource("2_du8vn")]

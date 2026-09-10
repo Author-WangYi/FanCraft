@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b6ktnr5asereg"]
+
+[ext_resource type="Script" uid="uid://p5q2l134cxtv" path="res://脚本/UI脚本/商店界面相关/UI_商店界面脚本_刷新选项.gd" id="1_gppv7"]
+[ext_resource type="Texture2D" uid="uid://cbxe4q67qrfjy" path="res://图片资源/UI/商店界面相关/商店_刷新选项框体.png" id="1_rgand"]
+[ext_resource type="Texture2D" uid="uid://dw7w6qwh3oy3n" path="res://图片资源/UI/商店界面相关/商店_刷新图标.png" id="2_byos8"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="3_neyqf"]
+[ext_resource type="Texture2D" uid="uid://ydt0gr5cm4gs" path="res://图片资源/UI/商店界面相关/商店_刷新选中.png" id="4_4osc6"]
+
+[node name="UI_商店界面_刷新选项" type="Node2D" unique_id=880001931]
+script = ExtResource("1_gppv7")
+
+[node name="放大节点_3倍" type="Node2D" parent="." unique_id=1068028747]
+scale = Vector2(3, 3)
+
+[node name="框体" type="Sprite2D" parent="放大节点_3倍" unique_id=712170246]
+texture = ExtResource("1_rgand")
+centered = false
+
+[node name="刷新图标" type="Sprite2D" parent="放大节点_3倍" unique_id=1093436995]
+position = Vector2(3, 3)
+texture = ExtResource("2_byos8")
+centered = false
+
+[node name="选中图片" type="Sprite2D" parent="放大节点_3倍" unique_id=1540222508]
+visible = false
+position = Vector2(-2, -2)
+texture = ExtResource("4_4osc6")
+centered = false
+
+[node name="gui输入区域" type="Control" parent="放大节点_3倍" unique_id=1230091873]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 28.0
+
+[node name="数值" type="RichTextLabel" parent="." unique_id=18333683]
+offset_left = 90.0
+offset_right = 192.0
+offset_bottom = 84.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_neyqf")
+theme_override_font_sizes/normal_font_size = 48
+text = "1234"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

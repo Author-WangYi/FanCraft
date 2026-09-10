@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://vyqqf0du6gb"]
+
+[ext_resource type="Script" uid="uid://brf3axrri5n8v" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_经验条.gd" id="1_dfi78"]
+
+[node name="UI_状态栏_经验条" type="Node2D" unique_id=50675888]
+script = ExtResource("1_dfi78")
+
+[node name="放大节点_6倍" type="Node2D" parent="." unique_id=124521339]
+scale = Vector2(6, 6)
+
+[node name="填充" type="ColorRect" parent="放大节点_6倍" unique_id=862406651]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+pivot_offset = Vector2(1, 1)
+color = Color(0.5803922, 0.9137255, 0.23921569, 1)

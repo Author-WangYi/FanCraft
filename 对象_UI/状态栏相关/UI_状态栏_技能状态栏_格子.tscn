@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c7n8wuoxbluh"]
+
+[ext_resource type="Script" uid="uid://dlh6hieohnx7m" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_技能状态格子.gd" id="1_psngs"]
+[ext_resource type="Texture2D" uid="uid://cxh5x70cqw84t" path="res://图片资源/UI/状态栏相关/状态栏_缩略展示框_底层.png" id="2_2u7w3"]
+[ext_resource type="Texture2D" uid="uid://5vsgmjcuu1w8" path="res://图片资源/UI/状态栏相关/状态栏_缩略展示框_黑幕.png" id="3_nclts"]
+[ext_resource type="Texture2D" uid="uid://b3ld3xr6nnjq2" path="res://图片资源/UI/状态栏相关/状态栏_缩略展示框_倒计时黑幕.png" id="4_5bufr"]
+
+[node name="UI_状态栏_技能状态栏_格子" type="Node2D" unique_id=1709158182]
+scale = Vector2(6, 6)
+script = ExtResource("1_psngs")
+
+[node name="底层" type="Sprite2D" parent="." unique_id=1474946950]
+position = Vector2(6, 6)
+texture = ExtResource("2_2u7w3")
+
+[node name="等级展示框" type="Sprite2D" parent="." unique_id=527007107]
+position = Vector2(6, 6)
+
+[node name="技能图标" type="Sprite2D" parent="." unique_id=93341975]
+position = Vector2(6, 6)
+
+[node name="黑幕" type="Sprite2D" parent="." unique_id=265643094]
+position = Vector2(6, 6)
+texture = ExtResource("3_nclts")
+
+[node name="倒计时黑幕" type="Sprite2D" parent="." unique_id=1423486478]
+position = Vector2(6, 6)
+texture = ExtResource("4_5bufr")

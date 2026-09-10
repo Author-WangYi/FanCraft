@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bpf4fmsqgrtaj"]
+
+[ext_resource type="Texture2D" uid="uid://f2m6ghg25cvb" path="res://图片资源/UI/状态栏相关/状态栏_金币_框体.png" id="2_mywax"]
+[ext_resource type="FontFile" uid="uid://cpragr124shnu" path="res://字体/位图字体/位图字体1.fnt" id="3_rc3fu"]
+[ext_resource type="Script" uid="uid://bsoj1jilx0hiq" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_金钱数数值.gd" id="4_rc3fu"]
+
+[node name="UI_状态栏_金钱数" type="Node2D" unique_id=880001931]
+
+[node name="框体" type="Sprite2D" parent="." unique_id=712170246]
+scale = Vector2(6, 6)
+texture = ExtResource("2_mywax")
+centered = false
+
+[node name="数值" type="RichTextLabel" parent="." unique_id=18333683]
+offset_left = 66.0
+offset_right = 128.0
+offset_bottom = 22.0
+scale = Vector2(3, 3)
+theme_override_fonts/normal_font = ExtResource("3_rc3fu")
+theme_override_font_sizes/normal_font_size = 16
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_rc3fu")

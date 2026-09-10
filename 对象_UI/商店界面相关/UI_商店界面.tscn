@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://c23c0cpqnmy5"]
+
+[ext_resource type="Script" uid="uid://dxjwpfbpwg7rp" path="res://脚本/UI脚本/商店界面相关/UI_商店界面脚本.gd" id="1_qmecd"]
+[ext_resource type="PackedScene" uid="uid://dh3urtudjwi11" path="res://对象_UI/商店界面相关/UI_商店界面_商品信息.tscn" id="3_042j4"]
+[ext_resource type="PackedScene" uid="uid://d10y4ffu67kux" path="res://对象_UI/通用相关/UI_通用_固定文本信息.tscn" id="4_3t022"]
+[ext_resource type="PackedScene" uid="uid://b4m3otns3qwmk" path="res://对象_UI/通用相关/UI_通用_玩家属性信息.tscn" id="5_6r2w1"]
+[ext_resource type="PackedScene" uid="uid://dyihkwjvllyoi" path="res://对象_UI/商店界面相关/UI_商店界面_金钱数.tscn" id="6_tarn6"]
+[ext_resource type="PackedScene" uid="uid://b6ktnr5asereg" path="res://对象_UI/商店界面相关/UI_商店界面_刷新选项.tscn" id="7_0dks1"]
+[ext_resource type="PackedScene" uid="uid://6ykpvsoi7ojt" path="res://对象_UI/UI_小提示显示.tscn" id="8_e64ro"]
+[ext_resource type="PackedScene" uid="uid://cr1krb81lbo8w" path="res://对象_UI/商店界面相关/UI_商店界面_继续选项.tscn" id="8_whdmq"]
+
+[node name="UI_商店界面" type="Control" unique_id=1035214181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qmecd")
+metadata/_edit_lock_ = true
+
+[node name="拦截点击区域" type="Control" parent="." unique_id=2085168350]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="黑幕图片" type="ColorRect" parent="." unique_id=1904288246]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="商品信息集合" type="Node2D" parent="." unique_id=132456586]
+position = Vector2(1128, 36)
+
+[node name="商品信息1" parent="商品信息集合" unique_id=530647751 instance=ExtResource("3_042j4")]
+position = Vector2(-1098, 0)
+
+[node name="商品信息2" parent="商品信息集合" unique_id=1762411369 instance=ExtResource("3_042j4")]
+position = Vector2(-732, 0)
+"格子序号" = 2
+
+[node name="商品信息3" parent="商品信息集合" unique_id=607955576 instance=ExtResource("3_042j4")]
+position = Vector2(-366, 0)
+"格子序号" = 3
+
+[node name="商品信息4" parent="商品信息集合" unique_id=788114043 instance=ExtResource("3_042j4")]
+"格子序号" = 4
+
+[node name="固定文本信息" parent="." unique_id=1496010504 instance=ExtResource("4_3t022")]
+position = Vector2(1506, 840)
+
+[node name="固定文本显示" parent="固定文本信息" index="1" unique_id=774466891]
+"设备类型文本1" = "商店界面固定文本1"
+"设备类型文本2" = "商店界面固定文本2"
+
+[node name="玩家属性信息" parent="." unique_id=1564077447 instance=ExtResource("5_6r2w1")]
+position = Vector2(1506, 36)
+
+[node name="金钱数" parent="." unique_id=1678984584 instance=ExtResource("6_tarn6")]
+position = Vector2(966, 966)
+
+[node name="刷新选项" parent="." unique_id=880001931 instance=ExtResource("7_0dks1")]
+position = Vector2(1260, 966)
+
+[node name="继续选项" parent="." unique_id=999453218 instance=ExtResource("8_whdmq")]
+position = Vector2(594, 960)
+
+[node name="UI_小提示显示" parent="." unique_id=203960990 instance=ExtResource("8_e64ro")]
+position = Vector2(12, 1068)
+
+[editable path="固定文本信息"]

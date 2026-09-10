@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dyihkwjvllyoi"]
+
+[ext_resource type="Texture2D" uid="uid://dusu3inrwctgl" path="res://图片资源/UI/商店界面相关/商店_显示框体1.png" id="1_cpw0m"]
+[ext_resource type="Texture2D" uid="uid://dkb3nr2q48yyq" path="res://图片资源/UI/商店界面相关/商店_金钱图标.png" id="2_d856v"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="3_d856v"]
+[ext_resource type="Script" uid="uid://cmu3p3lfgyahf" path="res://脚本/UI脚本/商店界面相关/UI_商店界面脚本_金钱数.gd" id="4_d856v"]
+
+[node name="UI_商店界面_金钱数" type="Node2D" unique_id=880001931]
+script = ExtResource("4_d856v")
+
+[node name="放大节点_3倍" type="Node2D" parent="." unique_id=1068028747]
+scale = Vector2(3, 3)
+
+[node name="框体" type="Sprite2D" parent="放大节点_3倍" unique_id=712170246]
+texture = ExtResource("1_cpw0m")
+centered = false
+
+[node name="金钱图标" type="Sprite2D" parent="放大节点_3倍" unique_id=1093436995]
+position = Vector2(12, 6)
+texture = ExtResource("2_d856v")
+centered = false
+
+[node name="数值" type="RichTextLabel" parent="." unique_id=18333683]
+offset_left = 72.0
+offset_right = 270.0
+offset_bottom = 84.0
+theme_override_fonts/normal_font = ExtResource("3_d856v")
+theme_override_font_sizes/normal_font_size = 48
+text = "10894"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

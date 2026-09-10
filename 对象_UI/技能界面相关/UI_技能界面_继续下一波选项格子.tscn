@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ccw8hx81xvpt4"]
+
+[ext_resource type="Script" uid="uid://o5baosvf0sv1" path="res://脚本/UI脚本/技能界面相关/UI_技能界面脚本_继续下一波选项格子.gd" id="1_800hk"]
+[ext_resource type="Texture2D" uid="uid://jl2tnwwh75aw" path="res://图片资源/UI/背包与技能界面相关/技能装配界面_继续下一波选项框体.png" id="2_800hk"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="4_800hk"]
+[ext_resource type="Texture2D" uid="uid://bka0vvah2wt1y" path="res://图片资源/UI/背包与技能界面相关/技能装配界面_继续下一波选中.png" id="4_gyh3p"]
+
+[node name="UI_技能界面_继续下一波选项格子" type="Node2D" unique_id=530647751]
+script = ExtResource("1_800hk")
+"格子序号" = null
+
+[node name="底层" type="Sprite2D" parent="." unique_id=435681197]
+position = Vector2(156, 48)
+scale = Vector2(3, 3)
+texture = ExtResource("2_800hk")
+
+[node name="选中图片" type="Sprite2D" parent="." unique_id=147254649]
+visible = false
+position = Vector2(156, 48)
+scale = Vector2(3, 3)
+texture = ExtResource("4_gyh3p")
+
+[node name="文本显示" type="RichTextLabel" parent="." unique_id=1778191498]
+z_index = 1
+offset_right = 312.0
+offset_bottom = 96.0
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_800hk")
+theme_override_font_sizes/normal_font_size = 32
+text = "0721"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gui输入区域" type="Control" parent="." unique_id=1933507572]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 303.0
+offset_bottom = 90.0
+pivot_offset = Vector2(39, 39)

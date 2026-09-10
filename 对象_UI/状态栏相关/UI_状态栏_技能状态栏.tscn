@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cct084tg0ouk2"]
+
+[ext_resource type="PackedScene" uid="uid://c7n8wuoxbluh" path="res://对象_UI/状态栏相关/UI_状态栏_技能状态栏_格子.tscn" id="1_em61k"]
+[ext_resource type="Script" uid="uid://sq15r0ovfki3" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_技能状态栏脚本.gd" id="1_p0yh3"]
+[ext_resource type="PackedScene" uid="uid://cqp0w12i8qk2p" path="res://对象_UI/状态栏相关/UI_状态栏_卡组数量.tscn" id="3_yghd8"]
+
+[node name="UI_状态栏_技能状态栏" type="Node2D" unique_id=1709158182]
+script = ExtResource("1_p0yh3")
+
+[node name="分类节点1" type="Node2D" parent="." unique_id=1745882882]
+
+[node name="格子1" parent="分类节点1" unique_id=457472515 instance=ExtResource("1_em61k")]
+position = Vector2(-216, -144)
+
+[node name="格子2" parent="分类节点1" unique_id=274190485 instance=ExtResource("1_em61k")]
+position = Vector2(-96, -144)
+"监视技能键位" = 2
+
+[node name="格子3" parent="分类节点1" unique_id=714922341 instance=ExtResource("1_em61k")]
+position = Vector2(24, -144)
+"监视技能键位" = 3
+
+[node name="格子4" parent="分类节点1" unique_id=246445854 instance=ExtResource("1_em61k")]
+position = Vector2(144, -144)
+"监视技能键位" = 4
+
+[node name="分类节点2" type="Node2D" parent="." unique_id=244615379]
+visible = false
+
+[node name="格子1" parent="分类节点2" unique_id=1943178769 instance=ExtResource("1_em61k")]
+position = Vector2(-216, -144)
+
+[node name="格子2" parent="分类节点2" unique_id=889364274 instance=ExtResource("1_em61k")]
+position = Vector2(-96, -144)
+"监视技能键位" = 2
+
+[node name="格子3" parent="分类节点2" unique_id=1616929738 instance=ExtResource("1_em61k")]
+position = Vector2(24, -144)
+"监视技能键位" = 3
+
+[node name="格子4" parent="分类节点2" unique_id=285843112 instance=ExtResource("1_em61k")]
+position = Vector2(144, -144)
+"监视技能键位" = 4
+
+[node name="UI_状态栏_卡组数量" parent="分类节点2" unique_id=880001931 instance=ExtResource("3_yghd8")]
+position = Vector2(264, -138)
+
+[node name="分类节点3" type="Node2D" parent="." unique_id=1480048759]

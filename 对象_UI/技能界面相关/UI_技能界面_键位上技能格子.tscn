@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://sgxrj33jboy4"]
+
+[ext_resource type="Texture2D" uid="uid://1pcy0m3kwjwp" path="res://图片资源/UI/背包与技能界面相关/背包_展示框底层.png" id="1_8a326"]
+[ext_resource type="Script" uid="uid://dqbcq21smrb5e" path="res://脚本/UI脚本/技能界面相关/UI_技能界面脚本_键位上格子.gd" id="1_tuynn"]
+[ext_resource type="FontFile" uid="uid://cpragr124shnu" path="res://字体/位图字体/位图字体1.fnt" id="2_34uuj"]
+[ext_resource type="Texture2D" uid="uid://b664cevu0e4ai" path="res://图片资源/UI/背包与技能界面相关/背包_展示框选中.png" id="4_rrijn"]
+
+[node name="UI_技能界面_键位上技能格子" type="Node2D" unique_id=530647751]
+scale = Vector2(3, 3)
+script = ExtResource("1_tuynn")
+
+[node name="底层" type="Sprite2D" parent="." unique_id=435681197]
+position = Vector2(39, 39)
+texture = ExtResource("1_8a326")
+
+[node name="等级展示框" type="Sprite2D" parent="." unique_id=287660643]
+position = Vector2(39, 39)
+
+[node name="技能图标" type="Sprite2D" parent="." unique_id=1534673994]
+position = Vector2(39, 39)
+
+[node name="技能数量显示" type="RichTextLabel" parent="." unique_id=1826028791]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 75.0
+offset_bottom = 75.0
+pivot_offset = Vector2(36, 36)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_34uuj")
+theme_override_font_sizes/normal_font_size = 20
+text = "123456"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="选中图片" type="Sprite2D" parent="." unique_id=596559573]
+visible = false
+position = Vector2(39, 39)
+texture = ExtResource("4_rrijn")
+
+[node name="gui输入区域" type="Control" parent="." unique_id=1933507572]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 78.0
+offset_bottom = 78.0
+pivot_offset = Vector2(39, 39)

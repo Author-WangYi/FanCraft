@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bvaqp7fqqkql3"]
+
+[ext_resource type="Script" uid="uid://cawuuvsxps4t7" path="res://脚本/UI脚本/技能界面相关/UI_技能界面脚本_当前键位滑动条.gd" id="1_ovg1y"]
+
+[node name="UI_技能界面_当前键位滑动条" type="Node2D" unique_id=530647751]
+script = ExtResource("1_ovg1y")
+
+[node name="黑条" type="ColorRect" parent="." unique_id=1463384566]
+offset_right = 238.0
+offset_bottom = 6.0
+color = Color(0, 0, 0, 1)
+
+[node name="白条" type="ColorRect" parent="." unique_id=228870754]
+offset_right = 40.0
+offset_bottom = 6.0

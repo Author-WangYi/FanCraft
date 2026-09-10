@@ -1,0 +1,1630 @@
+[gd_scene format=3 uid="uid://bj7lwkieuwg2"]
+
+[ext_resource type="Texture2D" uid="uid://cqgdxdhddfhjh" path="res://图片资源/角色/奶龙-Sheet.png" id="1_5vxah"]
+[ext_resource type="Texture2D" uid="uid://bk114tie6yb3" path="res://图片资源/角色/奶龙_额外1-Sheet.png" id="2_xggo4"]
+[ext_resource type="Texture2D" uid="uid://bltxsuxq8bnbi" path="res://图片资源/角色/奶龙_额外2-Sheet.png" id="3_ekgod"]
+[ext_resource type="Script" uid="uid://der3jdkuekjn2" path="res://脚本/通用脚本/受伤区域脚本.gd" id="5_xu01l"]
+[ext_resource type="Script" uid="uid://b1wi50ftofhcn" path="res://脚本/通用脚本/攻击区域脚本.gd" id="6_obl0s"]
+[ext_resource type="Script" uid="uid://b0vyvjuhq215i" path="res://脚本/状态机脚本/状态机脚本_角色_奶龙.gd" id="7_xggo4"]
+[ext_resource type="Script" uid="uid://ch833hcsyohtv" path="res://脚本/通用脚本/动画模块脚本.gd" id="8_rablr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q24vu"]
+radius = 14.0
+height = 70.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrm0u"]
+size = Vector2(22, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qevjs"]
+size = Vector2(48, 58)
+
+[sub_resource type="Animation" id="Animation_qevjs"]
+resource_name = "1_今夜星光闪闪_1"
+length = 0.75
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.18333334, 0.21666667, 0.25, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(6, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块:强中断时间")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.38333333),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("状态机模块:弱中断时间")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.51666665),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(32, 74), Vector2(38, 74)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(-2, -37), Vector2(27, -37)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("状态机模块")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["攻击音效_挥动1_1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("对象内容节点/受伤区域/受伤判定1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.21666668),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(5, -33)]
+}
+
+[sub_resource type="Animation" id="Animation_5vxah"]
+resource_name = "1_今夜星光闪闪_2"
+length = 0.68333334
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.18333334, 0.21666667, 0.25, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块:强中断时间")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("状态机模块:弱中断时间")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.48333332),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(42, 58), Vector2(50, 58)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(12, -29), Vector2(27, -37)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("状态机模块")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["攻击音效_挥动1_2", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("对象内容节点/受伤区域/受伤判定1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.21666668),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(5, -33)]
+}
+
+[sub_resource type="Animation" id="Animation_xggo4"]
+resource_name = "2_吐火焰"
+length = 1.2500018
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("状态机模块:强中断时间")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.81666666),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:弱中断时间")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.1666666),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.15, 0.21666668, 0.28333336, 0.81666666, 0.8833334),
+"transitions": PackedFloat32Array(0, 0, 0, 1, 1),
+"update": 1,
+"values": [Vector2(56, 60), Vector2(96, 70), Vector2(158, 76), Vector2(86, 70), Vector2(42, 50)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.15, 0.21666668, 0.28333336, 0.8166667, 0.8833334),
+"transitions": PackedFloat32Array(0, 0, 0, 1, 1),
+"update": 1,
+"values": [Vector2(48, -44), Vector2(68, -47), Vector2(99, -50), Vector2(130, -50), Vector2(152, -47)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.15, 0.2, 0.28333333, 0.36666667, 0.45000002, 0.53333336, 0.6166667, 0.70000005, 0.78333336, 0.86666673),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, true, true, true, true, true, true, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("状态机模块")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.15, 0.28333336, 0.4166667, 0.55, 0.6833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("对象内容节点/受伤区域/受伤判定1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(9, -33)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("对象内容节点/精灵图3:frame_coords")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.21666668, 0.28333336, 0.35000002, 0.4166667, 0.48333335, 0.55, 0.6166667, 0.6833334, 0.75000006, 0.8166667, 0.8833334, 0.95000005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1)]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("状态机模块")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.2, 0.25, 0.3, 0.35000002, 0.40000004, 0.45000005, 0.5, 0.55, 0.6, 0.65000004, 0.70000005, 0.75000006, 0.8000001, 0.8500001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.2, 0.28333333, 0.36666667, 0.45000002, 0.53333336, 0.6166667, 0.70000005, 0.78333336, 0.86666673, 0.95000005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, false, false, false, false, false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ekgod"]
+resource_name = "3_吐火焰.强袭"
+length = 1.6000017
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("状态机模块:强中断时间")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.15),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:弱中断时间")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.15, 0.21666668, 0.28333336, 1.2166667, 1.2833334),
+"transitions": PackedFloat32Array(0, 0, 0, 1, 1),
+"update": 1,
+"values": [Vector2(56, 60), Vector2(96, 70), Vector2(158, 76), Vector2(86, 70), Vector2(42, 50)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.15, 0.21666668, 0.28333336, 1.2166668, 1.2833334),
+"transitions": PackedFloat32Array(0, 0, 0, 1, 1),
+"update": 1,
+"values": [Vector2(48, -44), Vector2(68, -47), Vector2(99, -50), Vector2(130, -50), Vector2(152, -47)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("状态机模块")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.15, 0.28333336, 0.4166667, 0.55, 0.6833334, 0.8166667, 0.95000005, 1.0833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}, {
+"args": ["特殊音效_燃烧1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("对象内容节点/受伤区域/受伤判定1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(9, -33)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("对象内容节点/精灵图3:frame_coords")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.21666668, 0.28333336, 0.35000002, 0.4166667, 0.48333335, 0.55, 0.6166667, 0.6833334, 0.75000006, 0.8166667, 0.8833334, 0.95000005, 1.0166667, 1.0833334, 1.15, 1.2166667, 1.2833334, 1.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(0, 1), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("对象内容节点/受伤区域/受伤判定1:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("状态机模块")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.2, 0.25, 0.3, 0.35000002, 0.40000004, 0.45000005, 0.5, 0.55, 0.6, 0.65000004, 0.70000005, 0.75000006, 0.8000001, 0.8500001, 0.9000001, 0.95000005, 1, 1.0500001, 1.1000001, 1.1500001, 1.2, 1.2500001, 1.3000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.15, 0.2, 0.28333336, 0.36666667, 0.45000005, 0.53333336, 0.61666673, 0.70000005, 0.7833334, 0.86666673, 0.9500001, 1.0333334, 1.1166668, 1.2, 1.2833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.2, 0.28333336, 0.36666667, 0.45000005, 0.53333336, 0.61666673, 0.70000005, 0.7833334, 0.86666673, 0.9500001, 1.0333334, 1.1166668, 1.2, 1.2833334, 1.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ck7jx"]
+resource_name = "4_举高高"
+length = 0.56666666
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.18333334, 0.21666667, 0.25, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块:强中断时间")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.31666666),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("状态机模块:弱中断时间")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.48333332),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(44, 74), Vector2(46, 80)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(22, -37), Vector2(31, -40)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("状态机模块")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["攻击音效_挥动1_3", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wh4a8"]
+resource_name = "5_无双大黄瓜"
+length = 0.63333505
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/精灵图2:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.11666667, 0.16666667, 0.21666667, 0.25, 0.28333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:强中断时间")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:弱中断时间")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.51666665),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.116666675, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(72, 76), Vector2(90, 60)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.116666675, 0.21666668),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [Vector2(50, -81), Vector2(69, -30)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.11666667, 0.28333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("状态机模块")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.11666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["攻击音效_挥动1_6", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xu01l"]
+resource_name = "6_沙防掩意手"
+length = 0.66666836
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/精灵图2:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.18333334, 0.21666667, 0.23333333, 0.26666668, 0.3, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:强中断时间")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:弱中断时间")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668, 0.3),
+"transitions": PackedFloat32Array(0, 0, 0),
+"update": 1,
+"values": [Vector2(56, 60), Vector2(114, 74), Vector2(60, 56)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.13333334, 0.21666668, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(0, 0, 0, 0),
+"update": 1,
+"values": [Vector2(12, -30), Vector2(47, -51), Vector2(60, -51), Vector2(97, -56)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.13333334, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("状态机模块")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["特殊音效_飞沙声1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_obl0s"]
+resource_name = "7_大吼一声猛扑过去"
+length = 0.58333504
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(1, 6), Vector2i(0, 6), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块:强中断时间")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("状态机模块:弱中断时间")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(48, 58)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(8, -29)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.16666667, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("状态机模块")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["攻击音效_挥动1_4", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("状态机模块:技能内部状态")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_ss0i8"]
+resource_name = "8_奶龙回旋"
+length = 0.56666666
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11666667, 0.16666666, 0.19999999, 0.23333332, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 9), Vector2i(1, 9), Vector2i(2, 9), Vector2i(4, 9), Vector2i(5, 9), Vector2i(6, 9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块:强中断时间")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("状态机模块:弱中断时间")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(60, 60)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(18, -38)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("状态机模块")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.11666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["攻击音效_挥动1_6", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qlug8"]
+resource_name = "受伤"
+length = 0.08350167
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 8), Vector2i(1, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_q24vu"]
+length = 0.001
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5hcfj"]
+length = 0.60120165
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["基础音效_行走"],
+"method": &"对象播放普通音频"
+}, {
+"args": ["基础音效_行走"],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2nrdd"]
+resource_name = "重置"
+length = 0.001
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/精灵图3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:强中断时间")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("状态机模块:弱中断时间")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("对象内容节点/受伤区域/受伤判定1:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("状态机模块")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("对象内容节点/受伤区域/受伤判定1:shape:size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(22, 66)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("对象内容节点/受伤区域/受伤判定1:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [Vector2(0, -33)]
+}
+
+[sub_resource type="Animation" id="Animation_2lq8d"]
+resource_name = "new_animation"
+length = 1.0020016
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q77n6"]
+_data = {
+&"1_今夜星光闪闪_1": SubResource("Animation_qevjs"),
+&"1_今夜星光闪闪_2": SubResource("Animation_5vxah"),
+&"2_吐火焰": SubResource("Animation_xggo4"),
+&"3_吐火焰.强袭": SubResource("Animation_ekgod"),
+&"4_举高高": SubResource("Animation_ck7jx"),
+&"5_无双大黄瓜": SubResource("Animation_wh4a8"),
+&"6_沙防掩意手": SubResource("Animation_xu01l"),
+&"7_大吼一声猛扑过去": SubResource("Animation_obl0s"),
+&"8_奶龙回旋": SubResource("Animation_ss0i8"),
+&"受伤": SubResource("Animation_qlug8"),
+&"滞空": SubResource("Animation_q24vu"),
+&"移动": SubResource("Animation_5hcfj"),
+&"重置": SubResource("Animation_2nrdd"),
+&"静止": SubResource("Animation_2lq8d")
+}
+
+[node name="角色_奶龙" type="CharacterBody2D" unique_id=142822717]
+collision_mask = 48
+
+[node name="墙体判定1" type="CollisionShape2D" parent="." unique_id=772874157]
+z_index = 3
+position = Vector2(0, -35)
+shape = SubResource("CapsuleShape2D_q24vu")
+debug_color = Color(0.2509804, 0.7529412, 0.2509804, 0.5019608)
+
+[node name="对象内容节点" type="Node2D" parent="." unique_id=1815020297]
+
+[node name="精灵图1" type="Sprite2D" parent="对象内容节点" unique_id=1951395563]
+texture = ExtResource("1_5vxah")
+offset = Vector2(0, -48)
+hframes = 8
+vframes = 10
+frame = 8
+
+[node name="精灵图2" type="Sprite2D" parent="对象内容节点" unique_id=1680738799]
+visible = false
+position = Vector2(0, -56)
+texture = ExtResource("2_xggo4")
+hframes = 8
+vframes = 2
+frame = 8
+
+[node name="精灵图3" type="Sprite2D" parent="对象内容节点" unique_id=1633914983]
+visible = false
+texture = ExtResource("3_ekgod")
+offset = Vector2(0, -48)
+hframes = 8
+vframes = 2
+frame = 13
+
+[node name="受伤区域" type="Area2D" parent="对象内容节点" unique_id=217272555 groups=["受伤区域类型_角色"]]
+collision_layer = 4096
+collision_mask = 2560
+script = ExtResource("5_xu01l")
+
+[node name="受伤判定1" type="CollisionShape2D" parent="对象内容节点/受伤区域" unique_id=72547301]
+z_index = 4
+position = Vector2(0, -33)
+shape = SubResource("RectangleShape2D_vrm0u")
+debug_color = Color(0.1254902, 0.1254902, 0.7529412, 0.5019608)
+
+[node name="攻击区域" type="Area2D" parent="对象内容节点" unique_id=1812590524 groups=["攻击区域类型_角色"]]
+collision_layer = 256
+collision_mask = 40960
+script = ExtResource("6_obl0s")
+
+[node name="攻击判定1" type="CollisionShape2D" parent="对象内容节点/攻击区域" unique_id=1111392256]
+z_index = 5
+position = Vector2(8, -29)
+shape = SubResource("RectangleShape2D_qevjs")
+disabled = true
+debug_color = Color(0.7529412, 0.1254902, 0.1254902, 0.5019608)
+
+[node name="连接点集合" type="Node2D" parent="对象内容节点" unique_id=87996754]
+
+[node name="命中特效连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=1029823054]
+position = Vector2(0, -32)
+gizmo_extents = 25.0
+
+[node name="特效连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=1067163610]
+position = Vector2(0, -12)
+gizmo_extents = 25.0
+
+[node name="投射物发射连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=996766061]
+gizmo_extents = 25.0
+
+[node name="状态机模块" type="Node" parent="." unique_id=671402984 groups=["对象类型_角色"]]
+script = ExtResource("7_xggo4")
+"当前技能生命窃取次数" = 1.0
+"当前技能命中获得能量合计" = 1.0
+
+[node name="动画模块" type="AnimationPlayer" parent="." unique_id=1190499115]
+libraries/ = SubResource("AnimationLibrary_q77n6")
+script = ExtResource("8_rablr")
+
+[node name="摄像机镜头模块" type="Node2D" parent="." unique_id=1693164793 groups=["摄像机镜头"]]

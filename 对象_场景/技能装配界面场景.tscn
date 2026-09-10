@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://h8mil3gwg23p"]
+
+[ext_resource type="Texture2D" uid="uid://dlngtmkl60yup" path="res://图片资源/UI/通用相关/通用_背景图片.png" id="1_bbgbq"]
+[ext_resource type="Script" uid="uid://bc18ap5nys3gc" path="res://脚本/通用脚本/场景UI层脚本.gd" id="2_okgml"]
+[ext_resource type="PackedScene" uid="uid://c51xmh1ghoo3r" path="res://对象_UI/技能界面相关/UI_技能界面.tscn" id="3_bbgbq"]
+
+[node name="技能装配界面场景" type="Node2D" unique_id=653590078]
+
+[node name="视差背景" type="Parallax2D" parent="." unique_id=2113199029]
+
+[node name="背景图" type="Sprite2D" parent="视差背景" unique_id=1712621891]
+texture = ExtResource("1_bbgbq")
+centered = false
+
+[node name="摄像机模块" type="Camera2D" parent="." unique_id=42509817]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 4000
+limit_bottom = 2000
+
+[node name="UI层" type="CanvasLayer" parent="." unique_id=1002688755]
+script = ExtResource("2_okgml")
+"是否禁用打开技能界面" = true
+"是否禁用打开菜单界面" = true
+
+[node name="UI_技能界面" parent="UI层" unique_id=1035214181 instance=ExtResource("3_bbgbq")]
+"界面模式扩展" = 2

@@ -1,0 +1,286 @@
+[gd_scene format=3 uid="uid://bdo7dnslpr4jh"]
+
+[ext_resource type="Texture2D" uid="uid://b51x75g08yh0d" path="res://图片资源/普通特效/生成特效-Sheet.png" id="1_lkop7"]
+[ext_resource type="Texture2D" uid="uid://brxc31gv17mag" path="res://图片资源/敌人/投石熊-Sheet.png" id="2_lkop7"]
+[ext_resource type="Script" uid="uid://der3jdkuekjn2" path="res://脚本/通用脚本/受伤区域脚本.gd" id="3_qxqsg"]
+[ext_resource type="Script" uid="uid://b7jm4tl1dgcdl" path="res://脚本/状态机脚本/状态机脚本_敌人_投石熊.gd" id="4_cvr7y"]
+[ext_resource type="Script" uid="uid://ch833hcsyohtv" path="res://脚本/通用脚本/动画模块脚本.gd" id="6_4vc65"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q24vu"]
+radius = 8.0
+height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrm0u"]
+size = Vector2(22, 58)
+
+[sub_resource type="Animation" id="Animation_4gk6r"]
+resource_name = "1_技能1"
+length = 0.5666684
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块:技能1内部状态")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_qlug8"]
+resource_name = "受伤"
+length = 0.08350167
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h3tpn"]
+resource_name = "生成"
+length = 0.26666835
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图_生成:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666835),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/精灵图_生成:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("对象内容节点/受伤区域/受伤判定1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("墙体判定1:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_5hcfj"]
+length = 0.7181017
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.36666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_38wv0"]
+resource_name = "逃离"
+length = 0.7181017
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.36666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_1l7ss"]
+resource_name = "默认"
+length = 0.001
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/受伤区域/受伤判定1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("状态机模块")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q77n6"]
+_data = {
+&"1_技能1": SubResource("Animation_4gk6r"),
+&"受伤": SubResource("Animation_qlug8"),
+&"生成": SubResource("Animation_h3tpn"),
+&"移动": SubResource("Animation_5hcfj"),
+&"逃离": SubResource("Animation_38wv0"),
+&"重置": SubResource("Animation_1l7ss")
+}
+
+[node name="敌人_投石熊" type="CharacterBody2D" unique_id=142822717]
+collision_layer = 2
+collision_mask = 48
+
+[node name="墙体判定1" type="CollisionShape2D" parent="." unique_id=772874157]
+z_index = 3
+position = Vector2(0, -26)
+shape = SubResource("CapsuleShape2D_q24vu")
+debug_color = Color(0.2509804, 0.7529412, 0.2509804, 0.5019608)
+
+[node name="对象内容节点" type="Node2D" parent="." unique_id=1815020297]
+
+[node name="精灵图_生成" type="Sprite2D" parent="对象内容节点" unique_id=775385495]
+visible = false
+texture = ExtResource("1_lkop7")
+hframes = 8
+frame = 7
+
+[node name="精灵图1" type="Sprite2D" parent="对象内容节点" unique_id=1951395563]
+texture = ExtResource("2_lkop7")
+offset = Vector2(0, -32.000004)
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="受伤区域" type="Area2D" parent="对象内容节点" unique_id=217272555 groups=["受伤区域类型_敌人"]]
+collision_layer = 8192
+collision_mask = 1280
+script = ExtResource("3_qxqsg")
+
+[node name="受伤判定1" type="CollisionShape2D" parent="对象内容节点/受伤区域" unique_id=72547301]
+z_index = 4
+position = Vector2(0, -29)
+shape = SubResource("RectangleShape2D_vrm0u")
+debug_color = Color(0.1254902, 0.1254902, 0.7529412, 0.5019608)
+
+[node name="连接点集合" type="Node2D" parent="对象内容节点" unique_id=1678550335]
+
+[node name="投射物发射连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=454558764]
+position = Vector2(-16, -46)
+gizmo_extents = 25.0
+
+[node name="命中特效连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=2136424201]
+position = Vector2(0, -28)
+gizmo_extents = 25.0
+
+[node name="伤害数值特效连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=1595168315]
+position = Vector2(0, -58)
+gizmo_extents = 25.0
+
+[node name="掉落物生成连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=2060947899]
+position = Vector2(0, -24)
+gizmo_extents = 25.0
+
+[node name="状态机模块" type="Node" parent="." unique_id=925690202 groups=["对象类型_敌人"]]
+script = ExtResource("4_cvr7y")
+
+[node name="动画模块" type="AnimationPlayer" parent="." unique_id=1190499115]
+libraries/ = SubResource("AnimationLibrary_q77n6")
+script = ExtResource("6_4vc65")

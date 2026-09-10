@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dhfe3omgwambr"]
+
+[ext_resource type="Texture2D" uid="uid://cbjkjwisup8in" path="res://图片资源/UI/状态栏相关/状态栏_生命值_底层.png" id="1_ktfy3"]
+[ext_resource type="Script" uid="uid://y0qn6ufnaslv" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_生命值条状物.gd" id="1_yhfdm"]
+[ext_resource type="Texture2D" uid="uid://dkv67nt0l1ni4" path="res://图片资源/UI/状态栏相关/状态栏_生命值_外框.png" id="2_yhfdm"]
+[ext_resource type="Texture2D" uid="uid://cxgwstxvhvrkc" path="res://图片资源/UI/状态栏相关/状态栏_生命值_填充.png" id="3_dk071"]
+[ext_resource type="FontFile" uid="uid://cpragr124shnu" path="res://字体/位图字体/位图字体1.fnt" id="5_dk071"]
+[ext_resource type="Script" uid="uid://chmw1muaq65qj" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_生命值数值.gd" id="5_numcu"]
+[ext_resource type="Script" uid="uid://c3oivrwcv28m4" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_玩家角色数值类.gd" id="6_crtnr"]
+
+[node name="UI_状态栏_生命值" type="Node2D" unique_id=50675888]
+
+[node name="条状物" type="Node2D" parent="." unique_id=124521339]
+scale = Vector2(6, 6)
+script = ExtResource("1_yhfdm")
+
+[node name="底层" type="Sprite2D" parent="条状物" unique_id=1366685246]
+position = Vector2(13, 2)
+scale = Vector2(57, 1)
+texture = ExtResource("1_ktfy3")
+centered = false
+
+[node name="填充" type="Sprite2D" parent="条状物" unique_id=358996528]
+position = Vector2(13, 2)
+scale = Vector2(57, 1)
+texture = ExtResource("3_dk071")
+centered = false
+
+[node name="外框" type="Sprite2D" parent="条状物" unique_id=712170246]
+texture = ExtResource("2_yhfdm")
+centered = false
+
+[node name="数值" type="Node2D" parent="." unique_id=176060226]
+scale = Vector2(3, 3)
+script = ExtResource("5_numcu")
+
+[node name="当前值" type="RichTextLabel" parent="数值" unique_id=1108862782]
+offset_left = 20.0
+offset_right = 74.0
+offset_bottom = 22.0
+theme_override_fonts/normal_font = ExtResource("5_dk071")
+text = "0721"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("6_crtnr")
+"变量名称" = "生命值"
+
+[node name="正斜杠" type="RichTextLabel" parent="数值" unique_id=361616359]
+offset_left = 20.0
+offset_right = 144.0
+offset_bottom = 22.0
+theme_override_fonts/normal_font = ExtResource("5_dk071")
+text = "/"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="最大值" type="RichTextLabel" parent="数值" unique_id=332723609]
+offset_left = 90.0
+offset_right = 144.0
+offset_bottom = 22.0
+theme_override_fonts/normal_font = ExtResource("5_dk071")
+text = "114514"
+scroll_active = false
+vertical_alignment = 1
+script = ExtResource("6_crtnr")
+"变量名称" = "生命值最大"

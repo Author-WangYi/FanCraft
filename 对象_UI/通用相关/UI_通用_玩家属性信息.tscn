@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b4m3otns3qwmk"]
+
+[ext_resource type="Script" uid="uid://calfb06tl0gfp" path="res://脚本/UI脚本/通用相关/UI_通用脚本_玩家属性信息.gd" id="1_7rbg1"]
+[ext_resource type="Texture2D" uid="uid://d22vod038g6wo" path="res://图片资源/UI/通用相关/通用_玩家属性信息框体.png" id="2_dgxyy"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="3_nwyaa"]
+[ext_resource type="Script" uid="uid://b4vj4osupvpvh" path="res://脚本/通用脚本/RichTextLabel脚本_按键滚动.gd" id="4_2ennk"]
+
+[node name="UI_技能界面_玩家属性信息" type="Node2D" unique_id=530647751]
+script = ExtResource("1_7rbg1")
+
+[node name="放大节点_3倍" type="Node2D" parent="." unique_id=393186718]
+scale = Vector2(3, 3)
+
+[node name="信息框体" type="Sprite2D" parent="放大节点_3倍" unique_id=1382232914]
+position = Vector2(64, 106)
+texture = ExtResource("2_dgxyy")
+
+[node name="玩家属性名称显示" type="RichTextLabel" parent="." unique_id=774466891]
+z_index = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 225.0
+offset_bottom = 621.0
+pivot_offset = Vector2(-15, -15)
+mouse_filter = 2
+theme_override_constants/line_separation = 18
+theme_override_fonts/normal_font = ExtResource("3_nwyaa")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试1
+测试2
+测试3"
+scroll_active = false
+script = ExtResource("4_2ennk")
+"滚动条宽度" = 0
+"轨道左右边距" = 0
+
+[node name="玩家属性数值显示" type="RichTextLabel" parent="." unique_id=1796741056]
+z_index = 1
+offset_left = 159.0
+offset_top = 15.0
+offset_right = 369.0
+offset_bottom = 621.0
+pivot_offset = Vector2(225, -15)
+mouse_filter = 2
+theme_override_constants/line_separation = 18
+theme_override_fonts/normal_font = ExtResource("3_nwyaa")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "1.1
+2.2
+3.3"
+scroll_active = false
+horizontal_alignment = 2
+script = ExtResource("4_2ennk")
+"滚动条宽度" = 0
+"轨道左右边距" = 0

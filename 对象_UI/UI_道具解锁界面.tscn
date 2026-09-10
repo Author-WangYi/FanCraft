@@ -1,0 +1,362 @@
+[gd_scene format=3 uid="uid://i0w31e0rnbrj"]
+
+[ext_resource type="Script" uid="uid://ctv3jbgj85a87" path="res://脚本/UI脚本/UI_道具解锁界面脚本.gd" id="1_jw1xn"]
+[ext_resource type="Texture2D" uid="uid://c2qtjijtkupwm" path="res://图片资源/UI/杂项/道具解锁界面-Sheet.png" id="2_jw1xn"]
+[ext_resource type="Texture2D" uid="uid://ddjcx8665ct5t" path="res://图片资源/UI/杂项/展示框黑幕.png" id="3_h1vjq"]
+[ext_resource type="Texture2D" uid="uid://debcomlmltcdq" path="res://图片资源/UI/杂项/继续下一波选中.png" id="3_jw1xn"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="4_fd1ha"]
+[ext_resource type="Script" uid="uid://b4vj4osupvpvh" path="res://脚本/通用脚本/RichTextLabel脚本_按键滚动.gd" id="5_m85xo"]
+
+[node name="UI_道具解锁界面" type="Control" unique_id=1035214181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jw1xn")
+
+[node name="UI内容节点" type="Node2D" parent="." unique_id=179378103]
+scale = Vector2(3, 3)
+
+[node name="图片" type="Sprite2D" parent="UI内容节点" unique_id=712170246]
+texture = ExtResource("2_jw1xn")
+centered = false
+
+[node name="当前角色等级框显示" type="Sprite2D" parent="UI内容节点" unique_id=1897718305]
+position = Vector2(25, 141)
+centered = false
+
+[node name="当前角色图标显示" type="Sprite2D" parent="UI内容节点" unique_id=21872301]
+position = Vector2(25, 141)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="展示框黑幕显示集合" type="Node2D" parent="UI内容节点" unique_id=1809547968]
+z_index = 1
+position = Vector2(25, 141)
+
+[node name="展示框黑幕显示2" type="Sprite2D" parent="UI内容节点/展示框黑幕显示集合" unique_id=1581882247]
+position = Vector2(121, -129)
+texture = ExtResource("3_h1vjq")
+centered = false
+
+[node name="展示框黑幕显示3" type="Sprite2D" parent="UI内容节点/展示框黑幕显示集合" unique_id=1073234740]
+position = Vector2(243, -129)
+texture = ExtResource("3_h1vjq")
+centered = false
+
+[node name="展示框黑幕显示4" type="Sprite2D" parent="UI内容节点/展示框黑幕显示集合" unique_id=1922702378]
+position = Vector2(364.99997, -129)
+texture = ExtResource("3_h1vjq")
+centered = false
+
+[node name="展示框黑幕显示5" type="Sprite2D" parent="UI内容节点/展示框黑幕显示集合" unique_id=1584206130]
+position = Vector2(486.99997, -129)
+texture = ExtResource("3_h1vjq")
+centered = false
+
+[node name="解锁道具等级框显示集合" type="Node2D" parent="UI内容节点" unique_id=2023963816]
+
+[node name="解锁道具等级框显示2" type="Sprite2D" parent="UI内容节点/解锁道具等级框显示集合" unique_id=2139374112]
+position = Vector2(146, 12)
+centered = false
+
+[node name="解锁道具等级框显示3" type="Sprite2D" parent="UI内容节点/解锁道具等级框显示集合" unique_id=575694510]
+position = Vector2(268, 12)
+centered = false
+
+[node name="解锁道具等级框显示4" type="Sprite2D" parent="UI内容节点/解锁道具等级框显示集合" unique_id=752544222]
+position = Vector2(390, 12)
+centered = false
+
+[node name="解锁道具等级框显示5" type="Sprite2D" parent="UI内容节点/解锁道具等级框显示集合" unique_id=1412349892]
+position = Vector2(512, 12)
+centered = false
+
+[node name="解锁道具图标显示集合" type="Node2D" parent="UI内容节点" unique_id=1380405602]
+
+[node name="解锁道具图标显示2" type="Sprite2D" parent="UI内容节点/解锁道具图标显示集合" unique_id=794363776]
+position = Vector2(146, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="解锁道具图标显示3" type="Sprite2D" parent="UI内容节点/解锁道具图标显示集合" unique_id=459232412]
+position = Vector2(268, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="解锁道具图标显示4" type="Sprite2D" parent="UI内容节点/解锁道具图标显示集合" unique_id=1056620942]
+position = Vector2(390, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="解锁道具图标显示5" type="Sprite2D" parent="UI内容节点/解锁道具图标显示集合" unique_id=30517707]
+position = Vector2(512, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="选中指示图片" type="Sprite2D" parent="UI内容节点" unique_id=1173582334]
+position = Vector2(390, 320)
+texture = ExtResource("3_jw1xn")
+centered = false
+offset = Vector2(-2, -2)
+
+[node name="选项连接点集合" type="Node2D" parent="UI内容节点" unique_id=402212561]
+
+[node name="选项连接点1" type="Marker2D" parent="UI内容节点/选项连接点集合" unique_id=1843003606]
+position = Vector2(242, 320)
+
+[node name="选项连接点2" type="Marker2D" parent="UI内容节点/选项连接点集合" unique_id=1114803903]
+position = Vector2(390, 320)
+
+[node name="解锁道具名称显示集合" type="Control" parent="." unique_id=1435606245]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="解锁道具名称显示2" type="RichTextLabel" parent="解锁道具名称显示集合" unique_id=1309988429]
+z_index = 1
+layout_mode = 0
+offset_left = 393.0
+offset_top = 315.0
+offset_right = 717.0
+offset_bottom = 399.0
+pivot_offset = Vector2(-9, -9)
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "测试文本
+测试文本测试文本"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="解锁道具名称显示3" type="RichTextLabel" parent="解锁道具名称显示集合" unique_id=760815729]
+z_index = 1
+layout_mode = 0
+offset_left = 759.0
+offset_top = 315.0
+offset_right = 1083.0
+offset_bottom = 399.0
+pivot_offset = Vector2(-9, -9)
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "测试文本
+测试文本测试文本"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="解锁道具名称显示4" type="RichTextLabel" parent="解锁道具名称显示集合" unique_id=1616094830]
+z_index = 1
+layout_mode = 0
+offset_left = 1125.0
+offset_top = 315.0
+offset_right = 1449.0
+offset_bottom = 399.0
+pivot_offset = Vector2(-9, -9)
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "测试文本
+测试文本测试文本"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="解锁道具名称显示5" type="RichTextLabel" parent="解锁道具名称显示集合" unique_id=2032473273]
+z_index = 1
+layout_mode = 0
+offset_left = 1491.0
+offset_top = 315.0
+offset_right = 1815.0
+offset_bottom = 399.0
+pivot_offset = Vector2(-9, -9)
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "测试文本
+测试文本测试文本"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="解锁道具描述显示集合" type="Control" parent="." unique_id=129843226]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="解锁道具描述显示2" type="RichTextLabel" parent="解锁道具描述显示集合" unique_id=705454800]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 405.0
+offset_right = 717.0
+offset_bottom = 792.0
+pivot_offset = Vector2(-9, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试.角色描述
+角色描述角色描述角色描述"
+autowrap_mode = 1
+script = ExtResource("5_m85xo")
+
+[node name="解锁道具描述显示3" type="RichTextLabel" parent="解锁道具描述显示集合" unique_id=713028796]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 405.0
+offset_right = 1083.0
+offset_bottom = 792.0
+pivot_offset = Vector2(-9, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试.角色描述
+角色描述角色描述角色描述"
+autowrap_mode = 1
+script = ExtResource("5_m85xo")
+
+[node name="解锁道具描述显示4" type="RichTextLabel" parent="解锁道具描述显示集合" unique_id=2063718329]
+layout_mode = 0
+offset_left = 1125.0
+offset_top = 405.0
+offset_right = 1449.0
+offset_bottom = 792.0
+pivot_offset = Vector2(-9, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试.角色描述
+角色描述角色描述角色描述"
+autowrap_mode = 1
+script = ExtResource("5_m85xo")
+
+[node name="解锁道具描述显示5" type="RichTextLabel" parent="解锁道具描述显示集合" unique_id=897239985]
+layout_mode = 0
+offset_left = 1491.0
+offset_top = 405.0
+offset_right = 1815.0
+offset_bottom = 792.0
+pivot_offset = Vector2(-9, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试.角色描述
+角色描述角色描述角色描述"
+autowrap_mode = 1
+script = ExtResource("5_m85xo")
+
+[node name="道具解锁界面条件文本集合" type="Control" parent="." unique_id=1654378109]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="道具解锁界面条件文本2" type="RichTextLabel" parent="道具解锁界面条件文本集合" unique_id=399846037]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 837.0
+offset_right = 717.0
+offset_bottom = 921.0
+pivot_offset = Vector2(-9, -9)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "通过第10波解锁"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="道具解锁界面条件文本3" type="RichTextLabel" parent="道具解锁界面条件文本集合" unique_id=1302183479]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 837.0
+offset_right = 1083.0
+offset_bottom = 921.0
+pivot_offset = Vector2(-9, -9)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "通过第15波解锁"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="道具解锁界面条件文本4" type="RichTextLabel" parent="道具解锁界面条件文本集合" unique_id=1089176458]
+layout_mode = 0
+offset_left = 1125.0
+offset_top = 837.0
+offset_right = 1449.0
+offset_bottom = 921.0
+pivot_offset = Vector2(-9, -9)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "通过第20波解锁"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="道具解锁界面条件文本5" type="RichTextLabel" parent="道具解锁界面条件文本集合" unique_id=1515522668]
+layout_mode = 0
+offset_left = 1491.0
+offset_top = 837.0
+offset_right = 1815.0
+offset_bottom = 921.0
+pivot_offset = Vector2(-9, -9)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 32
+text = "通过第25波解锁"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="选项文本集合" type="Control" parent="." unique_id=1577100379]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="选项文本1" type="RichTextLabel" parent="选项文本集合" unique_id=988109297]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 969.0
+offset_right = 1023.0
+offset_bottom = 1047.0
+pivot_offset = Vector2(-15, -9)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 36
+text = "返回"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="选项文本2" type="RichTextLabel" parent="选项文本集合" unique_id=650503568]
+layout_mode = 0
+offset_left = 1185.0
+offset_top = 969.0
+offset_right = 1467.0
+offset_bottom = 1047.0
+pivot_offset = Vector2(-15, -9)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_fd1ha")
+theme_override_font_sizes/normal_font_size = 36
+text = "继续"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

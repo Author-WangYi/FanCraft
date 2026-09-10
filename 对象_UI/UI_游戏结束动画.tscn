@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://lepgqm5ehv1p"]
+
+[ext_resource type="Script" uid="uid://ccgyqab7nrdx6" path="res://脚本/UI脚本/UI_游戏结束动画.gd" id="1_48e3h"]
+[ext_resource type="Texture2D" uid="uid://dss3ngnla6n52" path="res://图片资源/UI/杂项/游戏结束动画_素材.png" id="2_48e3h"]
+
+[sub_resource type="Animation" id="Animation_48e3h"]
+resource_name = "播放"
+length = 1.6
+step = 0.01666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("放大节点_24倍/黑1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 45)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("放大节点_24倍/黑2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("放大节点_24倍/黑3:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 1e-05), Vector2(1, 45)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("放大节点_24倍/黑4:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 1e-05), Vector2(1, 45)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tp118"]
+_data = {
+&"播放": SubResource("Animation_48e3h")
+}
+
+[node name="UI_游戏结束动画" type="Control" unique_id=1035214181]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_48e3h")
+
+[node name="放大节点_24倍" type="Node2D" parent="." unique_id=845645663]
+scale = Vector2(24, 24)
+
+[node name="黑1" type="Sprite2D" parent="放大节点_24倍" unique_id=1837610697]
+position = Vector2(37, 45)
+scale = Vector2(1, 45)
+texture = ExtResource("2_48e3h")
+offset = Vector2(0, -0.5)
+
+[node name="黑2" type="Sprite2D" parent="放大节点_24倍" unique_id=476624657]
+position = Vector2(41, 0)
+scale = Vector2(1, 45)
+texture = ExtResource("2_48e3h")
+offset = Vector2(0, 0.5)
+
+[node name="黑3" type="Sprite2D" parent="放大节点_24倍" unique_id=1422942752]
+position = Vector2(39, 45)
+scale = Vector2(1, 45)
+texture = ExtResource("2_48e3h")
+offset = Vector2(0, -0.5)
+
+[node name="黑4" type="Sprite2D" parent="放大节点_24倍" unique_id=484304523]
+position = Vector2(43, 0)
+scale = Vector2(1, 45)
+texture = ExtResource("2_48e3h")
+offset = Vector2(0, 0.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1532913989]
+libraries/ = SubResource("AnimationLibrary_tp118")
+autoplay = &"播放"

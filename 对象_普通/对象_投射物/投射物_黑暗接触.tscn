@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://c2vkgmbvd4uvk"]
+
+[ext_resource type="Texture2D" uid="uid://bd1ukc8ojouv1" path="res://图片资源/技能特效素材/黑暗接触-Sheet.png" id="1_da6bj"]
+[ext_resource type="Script" uid="uid://b1wi50ftofhcn" path="res://脚本/通用脚本/攻击区域脚本.gd" id="2_3bafl"]
+[ext_resource type="Script" uid="uid://d3bhjwtks0jxr" path="res://脚本/状态机脚本/状态机脚本_投射物_黑暗接触.gd" id="3_da6bj"]
+[ext_resource type="Script" uid="uid://ch833hcsyohtv" path="res://脚本/通用脚本/动画模块脚本.gd" id="4_vb5he"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qevjs"]
+size = Vector2(24, 48)
+
+[sub_resource type="Animation" id="Animation_da6bj"]
+resource_name = "攻击"
+length = 1.1500019
+step = 0.01666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2, 0.23333333, 0.26666668, 0.3, 0.45, 0.56666666, 0.6833334, 0.8000001, 0.9166667, 1.0333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(5, 0), Vector2i(4, 0), Vector2i(3, 0), Vector2i(2, 0), Vector2i(1, 0), Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.38333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.15, 0.20000002, 0.23333335, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(24, 48), Vector2(30, 66), Vector2(36, 94), Vector2(40, 108), Vector2(44, 122)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.15, 0.20000002, 0.23333335, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(4, -24), Vector2(2, -33), Vector2(0, -47), Vector2(2, -54), Vector2(0, -61)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bafl"]
+_data = {
+&"攻击": SubResource("Animation_da6bj")
+}
+
+[node name="投射物_黑暗接触" type="Node2D" unique_id=1006840957]
+
+[node name="对象内容节点" type="Node2D" parent="." unique_id=1815020297]
+
+[node name="精灵图1" type="Sprite2D" parent="对象内容节点" unique_id=1951395563]
+position = Vector2(0, -66)
+texture = ExtResource("1_da6bj")
+hframes = 7
+
+[node name="攻击区域" type="Area2D" parent="对象内容节点" unique_id=1812590524 groups=["攻击区域类型_角色"]]
+collision_layer = 1024
+collision_mask = 40960
+script = ExtResource("2_3bafl")
+
+[node name="攻击判定1" type="CollisionShape2D" parent="对象内容节点/攻击区域" unique_id=1111392256]
+z_index = 5
+position = Vector2(4, -24)
+shape = SubResource("RectangleShape2D_qevjs")
+disabled = true
+debug_color = Color(0.7529412, 0.1254902, 0.1254902, 0.5019608)
+
+[node name="状态机模块" type="Node" parent="." unique_id=925690202 groups=["对象类型_投射物"]]
+script = ExtResource("3_da6bj")
+"当前技能生命窃取次数" = 1.0
+
+[node name="动画模块" type="AnimationPlayer" parent="." unique_id=1205378952]
+libraries/ = SubResource("AnimationLibrary_3bafl")
+script = ExtResource("4_vb5he")

@@ -1,0 +1,353 @@
+[gd_scene format=3 uid="uid://cgqlprv6c17pm"]
+
+[ext_resource type="Texture2D" uid="uid://bcbet85wwqf" path="res://图片资源/技能特效素材/爱言叶-Sheet.png" id="1_po0ix"]
+[ext_resource type="Script" uid="uid://b1wi50ftofhcn" path="res://脚本/通用脚本/攻击区域脚本.gd" id="2_wqshs"]
+[ext_resource type="Script" uid="uid://b8eluyiv71hts" path="res://脚本/通用脚本/仅检测型_攻击区域脚本.gd" id="3_emi1r"]
+[ext_resource type="Script" uid="uid://cf0r2qh7ffjth" path="res://脚本/状态机脚本/状态机脚本_投射物_爱言叶2.gd" id="3_po0ix"]
+[ext_resource type="Script" uid="uid://ch833hcsyohtv" path="res://脚本/通用脚本/动画模块脚本.gd" id="4_268xo"]
+[ext_resource type="Texture2D" uid="uid://us6f3fnrh1gh" path="res://图片资源/普通特效/频闪特效_96x96-Sheet.png" id="4_wqshs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlwyi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qevjs"]
+size = Vector2(24, 24)
+
+[sub_resource type="Animation" id="Animation_5hcfj"]
+resource_name = "投掷"
+length = 0.001
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 24)]
+}
+
+[sub_resource type="Animation" id="Animation_po0ix"]
+resource_name = "投掷_强化"
+length = 0.001
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/仅检测型_攻击区域/仅检测型_攻击判定1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/仅检测型_攻击区域/仅检测型_攻击判定1:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 24)]
+}
+
+[sub_resource type="Animation" id="Animation_wqshs"]
+resource_name = "投掷_强化_爆炸"
+length = 0.15030167
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.050000004, 0.116666675),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/精灵图1:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_wqshs")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("对象内容节点/精灵图1:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("对象内容节点/精灵图1:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("墙体判定1:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.050000004, 0.116666675),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.050000004),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(86, 86)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("状态机模块")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["特殊音效_火焰爆炸", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_emi1r"]
+resource_name = "重置"
+length = 0.001
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/精灵图1:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_po0ix")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/精灵图1:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("对象内容节点/精灵图1:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("墙体判定1:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("对象内容节点/仅检测型_攻击区域/仅检测型_攻击判定1:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q77n6"]
+_data = {
+&"投掷": SubResource("Animation_5hcfj"),
+&"投掷_强化": SubResource("Animation_po0ix"),
+&"投掷_强化_爆炸": SubResource("Animation_wqshs"),
+&"重置": SubResource("Animation_emi1r")
+}
+
+[node name="投射物_爱言叶2" type="CharacterBody2D" unique_id=142822717]
+collision_layer = 4
+collision_mask = 64
+
+[node name="墙体判定1" type="CollisionShape2D" parent="." unique_id=772874157]
+z_index = 3
+shape = SubResource("RectangleShape2D_vlwyi")
+disabled = true
+debug_color = Color(0.2509804, 0.7529412, 0.2509804, 0.5019608)
+
+[node name="对象内容节点" type="Node2D" parent="." unique_id=1815020297]
+
+[node name="精灵图1" type="Sprite2D" parent="对象内容节点" unique_id=1951395563]
+texture = ExtResource("4_wqshs")
+hframes = 3
+
+[node name="攻击区域" type="Area2D" parent="对象内容节点" unique_id=1812590524 groups=["攻击区域类型_角色"]]
+collision_layer = 1024
+collision_mask = 40960
+script = ExtResource("2_wqshs")
+
+[node name="攻击判定1" type="CollisionShape2D" parent="对象内容节点/攻击区域" unique_id=1111392256]
+z_index = 5
+shape = SubResource("RectangleShape2D_qevjs")
+debug_color = Color(0.7529412, 0.1254902, 0.1254902, 0.5019608)
+
+[node name="仅检测型_攻击区域" type="Area2D" parent="对象内容节点" unique_id=1962253168 groups=["攻击区域类型_角色"]]
+collision_layer = 0
+collision_mask = 40960
+script = ExtResource("3_emi1r")
+
+[node name="仅检测型_攻击判定1" type="CollisionShape2D" parent="对象内容节点/仅检测型_攻击区域" unique_id=2066722423]
+z_index = 5
+shape = SubResource("RectangleShape2D_qevjs")
+disabled = true
+debug_color = Color(0.7529412, 0.1254902, 0.1254902, 0.5019608)
+
+[node name="状态机模块" type="Node" parent="." unique_id=925690202 groups=["对象类型_投射物"]]
+script = ExtResource("3_po0ix")
+"当前技能生命窃取次数" = 1.0
+
+[node name="动画模块" type="AnimationPlayer" parent="." unique_id=1190499115]
+libraries/ = SubResource("AnimationLibrary_q77n6")
+script = ExtResource("4_268xo")

@@ -1,0 +1,56 @@
+# ============================================================
+#  策略：.godot/ 不整体忽略
+#        只保留「编辑器布局 / 最近打开的文件 / 收藏」，
+#        其余自动生成物全部忽略。
+# ============================================================
+
+
+# ---------- 1. 密钥：绝对不能提交 ----------
+# 导出凭据（密码、加密密钥），提交后只能轮换密钥，务必保留本行
+.godot/export_credentials.cfg
+
+
+# ---------- 2. 自动生成的大体积缓存 ----------
+# 资源导入缓存，删掉后打开编辑器会自动重建
+.godot/imported/
+# 着色器缓存，换驱动或换显卡就失效
+.godot/shader_cache/
+# 导出中间产物
+.godot/exported/
+# 扫描项目自动生成的索引
+.godot/global_script_class_cache.cfg
+.godot/scene_groups_cache.cfg
+# 4.4 起 UID 改由项目内的 .uid 附属文件保存，此二进制缓存已无用
+.godot/uid_cache.bin
+
+
+# ---------- 3. 编辑器目录：保留布局与最近文件，只排除纯缓存 ----------
+# 二进制文件系统缓存，文件名带版本号，会随 Godot 版本变化
+.godot/editor/filesystem_cache*
+# 脚本文档缓存，自动生成，与 Godot 版本强绑定
+.godot/editor/editor_script_doc_cache.res
+# 快速打开对话框缓存
+.godot/editor/quick_open_dialog_cache.cfg
+
+.godot/editor/*-folding-*.cfg
+.godot/editor/*-editstate-*.cfg
+
+
+# ---------- 4. Godot 生成物 ----------
+# 由 CSV 编译出来的二进制翻译文件
+*.translation
+
+
+# ---------- 5. 导出产物 ----------
+/build/
+/dist/
+*.pck
+*.tmp
+
+
+# ---------- 6. 系统与 Office 垃圾 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+# Excel 打开 .xlsm 时生成的锁文件
+~$*

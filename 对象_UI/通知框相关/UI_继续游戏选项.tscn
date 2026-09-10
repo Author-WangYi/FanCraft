@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bt88imxjq0xnw"]
+
+[ext_resource type="Script" uid="uid://db8lx82u0aegg" path="res://脚本/UI脚本/通知框相关/UI_继续游戏选项通知框脚本_选项.gd" id="1_0h7mb"]
+[ext_resource type="Texture2D" uid="uid://vf67l6lf5isn" path="res://图片资源/UI/通知框相关/通知框_选项框体.png" id="2_0h7mb"]
+[ext_resource type="Texture2D" uid="uid://safp2ihuq35l" path="res://图片资源/UI/通知框相关/通知框_选中.png" id="3_n8otb"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="8_5ju0f"]
+
+[node name="UI_继续游戏选项通知框_选项" type="Node2D" unique_id=530647751]
+script = ExtResource("1_0h7mb")
+
+[node name="放大节点_3倍" type="Node2D" parent="." unique_id=393186718]
+scale = Vector2(3, 3)
+
+[node name="底层" type="Sprite2D" parent="放大节点_3倍" unique_id=435681197]
+position = Vector2(33, 12)
+texture = ExtResource("2_0h7mb")
+
+[node name="选中图片" type="Sprite2D" parent="放大节点_3倍" unique_id=176672048]
+visible = false
+position = Vector2(33, 12)
+texture = ExtResource("3_n8otb")
+
+[node name="gui输入区域" type="Control" parent="放大节点_3倍" unique_id=2035714080]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 24.0
+
+[node name="选项文本" type="RichTextLabel" parent="." unique_id=395926256]
+z_index = 1
+offset_right = 198.0
+offset_bottom = 72.0
+pivot_offset = Vector2(-9, -9)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("8_5ju0f")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

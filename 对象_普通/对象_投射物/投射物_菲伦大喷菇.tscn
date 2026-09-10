@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://b6o73qnrl4drp"]
+
+[ext_resource type="Texture2D" uid="uid://hlaokmeuliqk" path="res://图片资源/技能特效素材/菲伦大喷菇-Sheet.png" id="1_ewybp"]
+[ext_resource type="Script" uid="uid://b1wi50ftofhcn" path="res://脚本/通用脚本/攻击区域脚本.gd" id="2_ypnct"]
+[ext_resource type="Script" uid="uid://c3x5yafqaonad" path="res://脚本/状态机脚本/状态机脚本_投射物_菲伦大喷菇.gd" id="3_ewybp"]
+[ext_resource type="Script" uid="uid://ch833hcsyohtv" path="res://脚本/通用脚本/动画模块脚本.gd" id="4_qcv7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qevjs"]
+size = Vector2(44, 20)
+
+[sub_resource type="Animation" id="Animation_da6bj"]
+resource_name = "攻击"
+length = 0.43333507
+step = 0.01666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.13333333, 0.18333334, 0.23333335, 0.28333336, 0.33333334, 0.38333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.083333336, 0.38333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.083333336, 0.13333334, 0.18333334, 0.23333335, 0.28333336, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(44, 20), Vector2(92, 20), Vector2(136, 20), Vector2(128, 20), Vector2(92, 20), Vector2(44, 20)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.083333336, 0.13333334, 0.18333334, 0.23333335, 0.28333336, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(54, -25), Vector2(78, -25), Vector2(100, -25), Vector2(110, -25), Vector2(137, -25), Vector2(163, -25)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("状态机模块")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.083333336),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"清空已记录攻击对象列表"
+}, {
+"args": ["特殊音效_水泡1", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ewybp"]
+resource_name = "静止"
+length = 0.76666844
+loop_mode = 1
+step = 0.01666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21666667, 0.38333333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bafl"]
+_data = {
+&"攻击": SubResource("Animation_da6bj"),
+&"静止": SubResource("Animation_ewybp")
+}
+
+[node name="投射物_菲伦大喷菇" type="Node2D" unique_id=1006840957]
+
+[node name="对象内容节点" type="Node2D" parent="." unique_id=1815020297]
+
+[node name="精灵图1" type="Sprite2D" parent="对象内容节点" unique_id=1951395563]
+position = Vector2(79, -23)
+texture = ExtResource("1_ewybp")
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="攻击区域" type="Area2D" parent="对象内容节点" unique_id=1812590524 groups=["攻击区域类型_角色"]]
+collision_layer = 1024
+collision_mask = 40960
+script = ExtResource("2_ypnct")
+
+[node name="攻击判定1" type="CollisionShape2D" parent="对象内容节点/攻击区域" unique_id=1111392256]
+z_index = 5
+position = Vector2(54, -25)
+shape = SubResource("RectangleShape2D_qevjs")
+debug_color = Color(0.7529412, 0.1254902, 0.1254902, 0.5019608)
+
+[node name="连接点集合" type="Node2D" parent="对象内容节点" unique_id=318288007]
+
+[node name="特效连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=2064273050]
+gizmo_extents = 25.0
+
+[node name="状态机模块" type="Node" parent="." unique_id=925690202 groups=["对象类型_投射物"]]
+script = ExtResource("3_ewybp")
+"当前技能生命窃取次数" = 1.0
+
+[node name="动画模块" type="AnimationPlayer" parent="." unique_id=1205378952]
+libraries/ = SubResource("AnimationLibrary_3bafl")
+script = ExtResource("4_qcv7e")

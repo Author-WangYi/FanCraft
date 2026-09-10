@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cr1krb81lbo8w"]
+
+[ext_resource type="Script" uid="uid://djdmkp7gqvbqo" path="res://脚本/UI脚本/商店界面相关/UI_商店界面脚本_继续选项.gd" id="1_2jp26"]
+[ext_resource type="Texture2D" uid="uid://b5won1q0e8mcj" path="res://图片资源/UI/商店界面相关/商店_继续选项框体.png" id="2_2jp26"]
+[ext_resource type="Texture2D" uid="uid://dkb3nr2q48yyq" path="res://图片资源/UI/商店界面相关/商店_金钱图标.png" id="3_2jp26"]
+[ext_resource type="Texture2D" uid="uid://dxxsduh82bhpa" path="res://图片资源/UI/商店界面相关/商店_继续选中.png" id="4_i472j"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="4_vrlxf"]
+
+[node name="UI_商店界面_继续选项" type="Node2D" unique_id=880001931]
+script = ExtResource("1_2jp26")
+
+[node name="分类节点_商店界面" type="Node2D" parent="." unique_id=1821309251]
+
+[node name="放大节点_3倍" type="Node2D" parent="分类节点_商店界面" unique_id=1068028747]
+scale = Vector2(3, 3)
+
+[node name="框体" type="Sprite2D" parent="分类节点_商店界面/放大节点_3倍" unique_id=712170246]
+texture = ExtResource("2_2jp26")
+centered = false
+
+[node name="选中图片" type="Sprite2D" parent="分类节点_商店界面/放大节点_3倍" unique_id=1764872757]
+visible = false
+position = Vector2(-2, -2)
+texture = ExtResource("4_i472j")
+centered = false
+
+[node name="gui输入区域" type="Control" parent="分类节点_商店界面/放大节点_3倍" unique_id=127496326]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 104.0
+offset_bottom = 32.0
+
+[node name="选项文本" type="RichTextLabel" parent="分类节点_商店界面" unique_id=18333683]
+offset_right = 312.0
+offset_bottom = 96.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_vrlxf")
+theme_override_font_sizes/normal_font_size = 32
+text = "继续 (第2波)"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="分类节点_奖励界面" type="Node2D" parent="." unique_id=206442170]
+visible = false
+
+[node name="放大节点_3倍" type="Node2D" parent="分类节点_奖励界面" unique_id=1825549654]
+scale = Vector2(3, 3)
+
+[node name="框体" type="Sprite2D" parent="分类节点_奖励界面/放大节点_3倍" unique_id=1247004830]
+texture = ExtResource("2_2jp26")
+centered = false
+
+[node name="金钱图标" type="Sprite2D" parent="分类节点_奖励界面/放大节点_3倍" unique_id=393511853]
+position = Vector2(8, 8)
+texture = ExtResource("3_2jp26")
+centered = false
+
+[node name="选中图片" type="Sprite2D" parent="分类节点_奖励界面/放大节点_3倍" unique_id=1861662469]
+visible = false
+position = Vector2(-2, -2)
+texture = ExtResource("4_i472j")
+centered = false
+
+[node name="gui输入区域" type="Control" parent="分类节点_奖励界面/放大节点_3倍" unique_id=1572521034]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 104.0
+offset_bottom = 32.0
+
+[node name="选项文本" type="RichTextLabel" parent="分类节点_奖励界面" unique_id=1698596057]
+offset_left = 75.0
+offset_right = 288.0
+offset_bottom = 96.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_vrlxf")
+theme_override_font_sizes/normal_font_size = 48
+text = "+301645"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

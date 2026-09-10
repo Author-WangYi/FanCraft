@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://byhoqivuab3f6"]
+
+[ext_resource type="Script" uid="uid://befkidgicgdkl" path="res://脚本/UI脚本/UI_过渡界面脚本.gd" id="1_6n6ru"]
+
+[node name="UI_过渡界面" type="Control" unique_id=1035214181]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6n6ru")
+
+[node name="黑幕图片" type="ColorRect" parent="." unique_id=1243140512]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.5803922)

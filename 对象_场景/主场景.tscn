@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://b8htgjtuht5mm"]
+
+[ext_resource type="Script" uid="uid://c8t5ixmmeo613" path="res://脚本/全局脚本/场景管理器脚本.gd" id="1_opups"]
+[ext_resource type="Texture2D" uid="uid://liub5h41dpyt" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_←.png" id="3_1k6r4"]
+[ext_resource type="Script" uid="uid://c43q46b01gvk6" path="res://脚本/全局脚本/虚拟按键节点脚本.gd" id="3_ynrki"]
+[ext_resource type="Texture2D" uid="uid://hf1h7hxh2jud" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_←.png" id="4_6b07j"]
+[ext_resource type="Script" uid="uid://b4fu487pkqsy3" path="res://脚本/通用脚本/虚拟按键脚本.gd" id="5_6b07j"]
+[ext_resource type="Texture2D" uid="uid://d1o1brrbewydx" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_↑.png" id="5_dhxt2"]
+[ext_resource type="Texture2D" uid="uid://uu5evq5rnx5l" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_↑.png" id="6_fujia"]
+[ext_resource type="Texture2D" uid="uid://dewqos4dxd8d7" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_↓.png" id="8_ymrva"]
+[ext_resource type="Texture2D" uid="uid://c6hms50kakkwp" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_↓.png" id="9_b2j67"]
+[ext_resource type="Texture2D" uid="uid://bd5cj0jpux7ko" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_→.png" id="12_d0o1d"]
+[ext_resource type="Texture2D" uid="uid://cj4v4i21oxdw2" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_→.png" id="13_8a2r5"]
+[ext_resource type="Texture2D" uid="uid://cf0dtyds7nee8" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_A.png" id="14_k3dtj"]
+[ext_resource type="Texture2D" uid="uid://bn7rohcmsnwei" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_A.png" id="15_h7htr"]
+[ext_resource type="Texture2D" uid="uid://dhvd14msqne64" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_B.png" id="16_ftmwp"]
+[ext_resource type="Texture2D" uid="uid://c5yhssm73kvao" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_B.png" id="17_30nrm"]
+[ext_resource type="Texture2D" uid="uid://c1dstwh6iw7r8" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_X.png" id="18_g6fjx"]
+[ext_resource type="Texture2D" uid="uid://cfebho46n71kv" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_X.png" id="19_unjr4"]
+[ext_resource type="Texture2D" uid="uid://dxkkasr0i44vd" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_Y.png" id="20_s817h"]
+[ext_resource type="Texture2D" uid="uid://b7pkvou4p42r0" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_Y.png" id="21_l3f11"]
+[ext_resource type="Texture2D" uid="uid://c5k1b78brlmx1" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_LT.png" id="22_b2j67"]
+[ext_resource type="Texture2D" uid="uid://b7njay4sjsvgl" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_LT.png" id="23_d0o1d"]
+[ext_resource type="Texture2D" uid="uid://cemeq2yapkeyy" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_LB.png" id="24_8a2r5"]
+[ext_resource type="Texture2D" uid="uid://c4dncyqgg4cxs" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_RT.png" id="25_g6fjx"]
+[ext_resource type="Texture2D" uid="uid://bj527li5int70" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_LB.png" id="25_k3dtj"]
+[ext_resource type="Texture2D" uid="uid://ru86opdi4adk" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_RT.png" id="26_unjr4"]
+[ext_resource type="Texture2D" uid="uid://dt601ohrnw7ru" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_RB.png" id="27_s817h"]
+[ext_resource type="Texture2D" uid="uid://c5bw1vx4bj1yq" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_RB.png" id="28_l3f11"]
+[ext_resource type="Texture2D" uid="uid://cq2onn6v7rc1r" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_SE.png" id="29_aq7wa"]
+[ext_resource type="Texture2D" uid="uid://1244kjj2dn0d" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_SE.png" id="30_a4tqi"]
+[ext_resource type="Texture2D" uid="uid://befetkwg5eqdr" path="res://图片资源/UI/虚拟按键相关/虚拟按键_正常_ST.png" id="31_8trey"]
+[ext_resource type="Texture2D" uid="uid://bhuucxj8ylot6" path="res://图片资源/UI/虚拟按键相关/虚拟按键_按下_ST.png" id="32_7px6k"]
+
+[node name="主场景" type="Node2D" unique_id=885127181]
+
+[node name="UI输入倒计时" type="Timer" parent="." unique_id=1747395836]
+process_mode = 3
+wait_time = 0.1
+one_shot = true
+
+[node name="角色输入倒计时" type="Timer" parent="." unique_id=636376050]
+process_mode = 3
+wait_time = 0.1
+one_shot = true
+
+[node name="场景管理器" type="Node2D" parent="." unique_id=2036575974]
+script = ExtResource("1_opups")
+
+[node name="虚拟按键" type="CanvasLayer" parent="." unique_id=552752957]
+process_mode = 3
+layer = 9
+script = ExtResource("3_ynrki")
+
+[node name="拦截gui输入" type="Control" parent="虚拟按键" unique_id=1371862562]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="虚拟按键内容节点" type="Node2D" parent="虚拟按键" unique_id=1457041164]
+modulate = Color(1, 1, 1, 0.21960784)
+scale = Vector2(12, 12)
+
+[node name="虚拟按键_↑" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1653738539]
+position = Vector2(18, 47)
+texture_normal = ExtResource("5_dhxt2")
+texture_pressed = ExtResource("6_fujia")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["移动↑", "操作↑"])
+
+[node name="虚拟按键_↓" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1699881704]
+position = Vector2(18, 71)
+texture_normal = ExtResource("8_ymrva")
+texture_pressed = ExtResource("9_b2j67")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["移动↓", "操作↓"])
+
+[node name="虚拟按键_←" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1430624810]
+position = Vector2(3, 60)
+texture_normal = ExtResource("3_1k6r4")
+texture_pressed = ExtResource("4_6b07j")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["移动←", "操作←"])
+
+[node name="虚拟按键_→" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=335981594]
+position = Vector2(31, 60)
+texture_normal = ExtResource("12_d0o1d")
+texture_pressed = ExtResource("13_8a2r5")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["移动→", "操作→"])
+
+[node name="虚拟按键_A" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1229827920]
+position = Vector2(126, 70)
+texture_normal = ExtResource("14_k3dtj")
+texture_pressed = ExtResource("15_h7htr")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["技能1", "操作确认"])
+
+[node name="虚拟按键_B" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=858966923]
+position = Vector2(140, 58)
+texture_normal = ExtResource("16_ftmwp")
+texture_pressed = ExtResource("17_30nrm")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["技能4", "操作取消"])
+
+[node name="虚拟按键_X" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1584508071]
+position = Vector2(112, 58)
+texture_normal = ExtResource("18_g6fjx")
+texture_pressed = ExtResource("19_unjr4")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["技能2"])
+
+[node name="虚拟按键_Y" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=628803918]
+position = Vector2(126, 46)
+texture_normal = ExtResource("20_s817h")
+texture_pressed = ExtResource("21_l3f11")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["技能3"])
+
+[node name="虚拟按键_LT" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=50310853]
+position = Vector2(2, 2)
+texture_normal = ExtResource("22_b2j67")
+texture_pressed = ExtResource("23_d0o1d")
+script = ExtResource("5_6b07j")
+
+[node name="虚拟按键_LB" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=885771685]
+position = Vector2(2, 16)
+texture_normal = ExtResource("24_8a2r5")
+texture_pressed = ExtResource("25_k3dtj")
+script = ExtResource("5_6b07j")
+
+[node name="虚拟按键_RT" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1432380417]
+position = Vector2(128, 2)
+texture_normal = ExtResource("25_g6fjx")
+texture_pressed = ExtResource("26_unjr4")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["跳跃"])
+
+[node name="虚拟按键_RB" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=96696402]
+position = Vector2(136, 16)
+texture_normal = ExtResource("27_s817h")
+texture_pressed = ExtResource("28_l3f11")
+script = ExtResource("5_6b07j")
+
+[node name="虚拟按键_SE" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1816386511]
+position = Vector2(52, 80)
+texture_normal = ExtResource("29_aq7wa")
+texture_pressed = ExtResource("30_a4tqi")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["菜单2"])
+
+[node name="虚拟按键_ST" type="TouchScreenButton" parent="虚拟按键/虚拟按键内容节点" unique_id=1639567678]
+position = Vector2(86, 80)
+texture_normal = ExtResource("31_8trey")
+texture_pressed = ExtResource("32_7px6k")
+script = ExtResource("5_6b07j")
+"触发输入列表" = Array[String](["菜单1"])

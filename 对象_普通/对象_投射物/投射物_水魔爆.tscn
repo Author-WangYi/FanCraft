@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://7ddvxbgw2gki"]
+
+[ext_resource type="Texture2D" uid="uid://c4u2lr7neppq3" path="res://图片资源/技能特效素材/水魔爆-Sheet.png" id="1_3yufh"]
+[ext_resource type="Script" uid="uid://b1wi50ftofhcn" path="res://脚本/通用脚本/攻击区域脚本.gd" id="2_afcht"]
+[ext_resource type="Script" uid="uid://e6pmjplaj3i" path="res://脚本/状态机脚本/状态机脚本_投射物_水魔爆.gd" id="3_3yufh"]
+[ext_resource type="Script" uid="uid://ch833hcsyohtv" path="res://脚本/通用脚本/动画模块脚本.gd" id="4_7gelj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afcht"]
+size = Vector2(20, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qevjs"]
+size = Vector2(100, 70)
+
+[sub_resource type="Animation" id="Animation_da6bj"]
+resource_name = "攻击"
+length = 0.46666667
+step = 0.01666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.050000004, 0.1, 0.16666667, 0.25, 0.33333334, 0.4166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("对象内容节点/攻击区域/攻击判定1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.41666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("对象内容节点/攻击区域/攻击判定1:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.10000001, 0.16666667, 0.25, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(44, 152), Vector2(60, 152), Vector2(112, 80), Vector2(100, 70)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("对象内容节点/攻击区域/攻击判定1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.10000001, 0.25, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -76), Vector2(0, -40), Vector2(0, -35)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("状态机模块:当前技能生命窃取次数")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("状态机模块")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["特殊音效_技能类4", 0.0, 0.0],
+"method": &"对象播放普通音频"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ewybp"]
+resource_name = "移动"
+length = 0.4666684
+loop_mode = 1
+step = 0.01666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("对象内容节点/精灵图1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11666667, 0.23333333, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bafl"]
+_data = {
+&"攻击": SubResource("Animation_da6bj"),
+&"移动": SubResource("Animation_ewybp")
+}
+
+[node name="投射物_水魔爆" type="CharacterBody2D" unique_id=732887778]
+collision_layer = 4
+collision_mask = 80
+
+[node name="墙体判定1" type="CollisionShape2D" parent="." unique_id=84942472]
+z_index = 3
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_afcht")
+debug_color = Color(0.2509804, 0.7529412, 0.2509804, 0.5019608)
+
+[node name="对象内容节点" type="Node2D" parent="." unique_id=1815020297]
+
+[node name="精灵图1" type="Sprite2D" parent="对象内容节点" unique_id=1951395563]
+position = Vector2(0, -88)
+texture = ExtResource("1_3yufh")
+hframes = 8
+vframes = 2
+
+[node name="攻击区域" type="Area2D" parent="对象内容节点" unique_id=1812590524 groups=["攻击区域类型_角色"]]
+collision_layer = 1024
+collision_mask = 40960
+script = ExtResource("2_afcht")
+
+[node name="攻击判定1" type="CollisionShape2D" parent="对象内容节点/攻击区域" unique_id=1111392256]
+z_index = 5
+position = Vector2(0, -35)
+shape = SubResource("RectangleShape2D_qevjs")
+disabled = true
+debug_color = Color(0.7529412, 0.1254902, 0.1254902, 0.5019608)
+
+[node name="连接点集合" type="Node2D" parent="对象内容节点" unique_id=318288007]
+
+[node name="特效连接点" type="Marker2D" parent="对象内容节点/连接点集合" unique_id=2064273050]
+gizmo_extents = 25.0
+
+[node name="状态机模块" type="Node" parent="." unique_id=925690202 groups=["对象类型_投射物"]]
+script = ExtResource("3_3yufh")
+"当前技能生命窃取次数" = 1.0
+
+[node name="动画模块" type="AnimationPlayer" parent="." unique_id=1205378952]
+libraries/ = SubResource("AnimationLibrary_3bafl")
+script = ExtResource("4_7gelj")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cmxpiscfob07x"]
+
+[ext_resource type="Script" uid="uid://crtc0p78gi17f" path="res://脚本/UI脚本/UI_版本号显示脚本.gd" id="1_wn1u3"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="4_r3qb8"]
+
+[node name="UI_版本号显示" type="Node2D" unique_id=530647751]
+script = ExtResource("1_wn1u3")
+
+[node name="文本" type="RichTextLabel" parent="." unique_id=918999990]
+offset_left = -1200.0
+offset_top = -600.0
+pivot_offset = Vector2(-9, -9)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_r3qb8")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "v1.0.0_250721_PGM1.0.6.12"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 2

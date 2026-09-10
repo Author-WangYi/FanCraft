@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://6ykpvsoi7ojt"]
+
+[ext_resource type="Script" uid="uid://b8notle36koj6" path="res://脚本/UI脚本/UI_小提示显示脚本.gd" id="1_t15r6"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="2_kswro"]
+
+[node name="UI_小提示显示" type="Node2D" unique_id=530647751]
+script = ExtResource("1_t15r6")
+
+[node name="文本" type="RichTextLabel" parent="." unique_id=918999990]
+offset_top = -150.0
+offset_right = 540.0
+pivot_offset = Vector2(-129, 525)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_kswro")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "小提示测试
+小提示测试测试
+小提示测试"
+scroll_active = false
+autowrap_mode = 1
+vertical_alignment = 2
+
+[node name="显示计时器" type="Timer" parent="." unique_id=1911133941]
+wait_time = 5.0

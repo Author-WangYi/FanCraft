@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b5gj74get78uk"]
+
+[ext_resource type="Texture2D" uid="uid://10yhwad2u0la" path="res://图片资源/掉落物/掉落物-Sheet.png" id="1_gvlb4"]
+[ext_resource type="Script" uid="uid://bnt6nt3vve43s" path="res://脚本/状态机脚本/状态机脚本_掉落物_金币.gd" id="2_lmewe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q24vu"]
+radius = 3.0
+height = 14.0
+
+[node name="掉落物_金币" type="CharacterBody2D" unique_id=142822717]
+collision_layer = 0
+collision_mask = 112
+
+[node name="墙体判定1" type="CollisionShape2D" parent="." unique_id=772874157]
+z_index = 3
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_q24vu")
+debug_color = Color(0.2509804, 0.7529412, 0.2509804, 0.5019608)
+
+[node name="对象内容节点" type="Node2D" parent="." unique_id=1304959090]
+
+[node name="精灵图1" type="Sprite2D" parent="对象内容节点" unique_id=1951395563]
+position = Vector2(0, -9)
+texture = ExtResource("1_gvlb4")
+hframes = 4
+
+[node name="状态机模块" type="Node" parent="." unique_id=925690202]
+script = ExtResource("2_lmewe")

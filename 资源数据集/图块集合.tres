@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" format=3 uid="uid://dlvldw2crcjl"]
+
+[ext_resource type="Texture2D" uid="uid://17m0ynhjuiub" path="res://图片资源/背景/半透明图块80x20.png" id="1_srbov"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdaao"]
+resource_name = "透明地面"
+texture = ExtResource("1_srbov")
+texture_region_size = Vector2i(20, 20)
+1:0/0 = 0
+1:0/0/modulate = Color(1, 1, 1, 0)
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+2:0/0 = 0
+2:0/0/modulate = Color(1, 1, 1, 0)
+3:0/0 = 0
+3:0/0/modulate = Color(1, 1, 1, 0)
+0:0/0 = 0
+0:0/0/modulate = Color(1, 1, 1, 0)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[resource]
+tile_size = Vector2i(20, 20)
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 64
+physics_layer_1/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_kdaao")

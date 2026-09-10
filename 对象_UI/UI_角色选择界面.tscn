@@ -1,0 +1,406 @@
+[gd_scene format=3 uid="uid://b3t27u67fyccj"]
+
+[ext_resource type="Script" uid="uid://bae36cddt1saj" path="res://脚本/UI脚本/UI_角色选择界面脚本.gd" id="1_4stcc"]
+[ext_resource type="Texture2D" uid="uid://drtiasrgx76fl" path="res://图片资源/UI/杂项/角色选择界面-Sheet.png" id="2_vnely"]
+[ext_resource type="Texture2D" uid="uid://d1jnfc1wi5q80" path="res://图片资源/UI/杂项/展示框选中.png" id="3_vnely"]
+[ext_resource type="Texture2D" uid="uid://doqv2nvr4ojrr" path="res://图片资源/UI/杂项/滑动条.png" id="4_7llve"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="4_d5sbv"]
+[ext_resource type="Script" uid="uid://b4vj4osupvpvh" path="res://脚本/通用脚本/RichTextLabel脚本_按键滚动.gd" id="5_u44vw"]
+
+[node name="UI_角色选择界面" type="Control" unique_id=1035214181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4stcc")
+
+[node name="当前筛选类型显示" type="RichTextLabel" parent="." unique_id=760831038]
+z_index = 1
+layout_mode = 0
+offset_left = 363.0
+offset_top = 51.0
+offset_right = 729.0
+offset_bottom = 171.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 0
+theme_override_constants/outline_size = 24
+theme_override_fonts/normal_font = ExtResource("4_d5sbv")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "全部"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="当前角色名称显示" type="RichTextLabel" parent="." unique_id=389959302]
+z_index = 1
+layout_mode = 0
+offset_left = 1119.0
+offset_top = 363.0
+offset_right = 1443.0
+offset_bottom = 447.0
+pivot_offset = Vector2(-9, -9)
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_d5sbv")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试文本测试文本"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="当前角色描述显示" type="RichTextLabel" parent="." unique_id=1064808618]
+z_index = 1
+layout_mode = 0
+offset_left = 1119.0
+offset_top = 453.0
+offset_right = 1443.0
+offset_bottom = 984.0
+pivot_offset = Vector2(-9, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_d5sbv")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试.角色描述
+角色描述角色描述角色描述"
+autowrap_mode = 1
+script = ExtResource("5_u44vw")
+
+[node name="玩家属性名称显示" type="RichTextLabel" parent="." unique_id=1383526530]
+z_index = 1
+layout_mode = 0
+offset_left = 1521.0
+offset_top = 51.0
+offset_right = 1731.0
+offset_bottom = 659.0
+pivot_offset = Vector2(-15, -15)
+theme_override_constants/line_separation = 18
+theme_override_fonts/normal_font = ExtResource("4_d5sbv")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试1
+测试2
+测试3"
+scroll_active = false
+script = ExtResource("5_u44vw")
+
+[node name="玩家属性数值显示" type="RichTextLabel" parent="." unique_id=866616664]
+z_index = 1
+layout_mode = 0
+offset_left = 1665.0
+offset_top = 51.0
+offset_right = 1875.0
+offset_bottom = 659.0
+pivot_offset = Vector2(225, -15)
+theme_override_constants/line_separation = 18
+theme_override_fonts/normal_font = ExtResource("4_d5sbv")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "1.1
+2.2
+3.3"
+scroll_active = false
+horizontal_alignment = 2
+script = ExtResource("5_u44vw")
+
+[node name="角色选择界面固定文本" type="RichTextLabel" parent="." unique_id=988109297]
+z_index = 1
+layout_mode = 0
+offset_left = 1521.0
+offset_top = 855.0
+offset_right = 1875.0
+offset_bottom = 1029.0
+pivot_offset = Vector2(-15, -15)
+mouse_filter = 2
+theme_override_constants/line_separation = 10
+theme_override_fonts/normal_font = ExtResource("4_d5sbv")
+theme_override_font_sizes/normal_font_size = 32
+text = "<攻击> - 确认
+<技能键3> - 返回
+<物品栏> - 查看物品"
+script = ExtResource("5_u44vw")
+"文本受设备类型控制" = true
+"设备类型文本1" = "角色选择界面固定文本1"
+"设备类型文本2" = "角色选择界面固定文本2"
+
+[node name="角色图标区域集合" type="Control" parent="." unique_id=466777587]
+z_index = 1
+anchors_preset = 0
+
+[node name="角色图标区域1" type="Control" parent="角色图标区域集合" unique_id=695657601]
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 222.0
+offset_right = 276.0
+offset_bottom = 456.0
+
+[node name="角色图标区域2" type="Control" parent="角色图标区域集合" unique_id=724472580]
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 222.0
+offset_right = 534.0
+offset_bottom = 456.0
+
+[node name="角色图标区域3" type="Control" parent="角色图标区域集合" unique_id=1370286318]
+anchors_preset = 0
+offset_left = 558.0
+offset_top = 222.0
+offset_right = 792.0
+offset_bottom = 456.0
+
+[node name="角色图标区域4" type="Control" parent="角色图标区域集合" unique_id=340249638]
+anchors_preset = 0
+offset_left = 816.0
+offset_top = 222.0
+offset_right = 1050.0
+offset_bottom = 456.0
+
+[node name="角色图标区域5" type="Control" parent="角色图标区域集合" unique_id=684401864]
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 480.0
+offset_right = 276.0
+offset_bottom = 714.0
+
+[node name="角色图标区域6" type="Control" parent="角色图标区域集合" unique_id=795942132]
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 480.0
+offset_right = 534.0
+offset_bottom = 714.0
+
+[node name="角色图标区域7" type="Control" parent="角色图标区域集合" unique_id=1270043163]
+anchors_preset = 0
+offset_left = 558.0
+offset_top = 480.0
+offset_right = 792.0
+offset_bottom = 714.0
+
+[node name="角色图标区域8" type="Control" parent="角色图标区域集合" unique_id=1262435531]
+anchors_preset = 0
+offset_left = 816.0
+offset_top = 480.0
+offset_right = 1050.0
+offset_bottom = 714.0
+
+[node name="角色图标区域9" type="Control" parent="角色图标区域集合" unique_id=1511431552]
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 738.0
+offset_right = 276.0
+offset_bottom = 972.0
+
+[node name="角色图标区域10" type="Control" parent="角色图标区域集合" unique_id=196317408]
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 738.0
+offset_right = 534.0
+offset_bottom = 972.0
+
+[node name="角色图标区域11" type="Control" parent="角色图标区域集合" unique_id=520119593]
+anchors_preset = 0
+offset_left = 558.0
+offset_top = 738.0
+offset_right = 792.0
+offset_bottom = 972.0
+
+[node name="角色图标区域12" type="Control" parent="角色图标区域集合" unique_id=343753889]
+anchors_preset = 0
+offset_left = 816.0
+offset_top = 738.0
+offset_right = 1050.0
+offset_bottom = 972.0
+
+[node name="角色类型筛选按钮区域集合" type="Control" parent="." unique_id=423860447]
+z_index = 1
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 41.0
+
+[node name="角色类型筛选按钮区域1" type="Control" parent="角色类型筛选按钮区域集合" unique_id=1095619332]
+anchors_preset = 0
+offset_left = 273.0
+offset_top = 27.0
+offset_right = 393.0
+offset_bottom = 195.0
+
+[node name="角色类型筛选按钮区域2" type="Control" parent="角色类型筛选按钮区域集合" unique_id=2044944237]
+anchors_preset = 0
+offset_left = 699.0
+offset_top = 27.0
+offset_right = 819.0
+offset_bottom = 195.0
+
+[node name="UI内容节点" type="Node2D" parent="." unique_id=179378103]
+scale = Vector2(3, 3)
+
+[node name="图片" type="Sprite2D" parent="UI内容节点" unique_id=712170246]
+texture = ExtResource("2_vnely")
+centered = false
+
+[node name="当前角色等级框显示" type="Sprite2D" parent="UI内容节点" unique_id=1897718305]
+position = Vector2(388, 28)
+centered = false
+
+[node name="当前角色图标显示" type="Sprite2D" parent="UI内容节点" unique_id=21872301]
+position = Vector2(391, 31)
+centered = false
+
+[node name="角色等级框显示集合" type="Node2D" parent="UI内容节点" unique_id=2023963816]
+
+[node name="角色等级框显示1" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=2139374112]
+position = Vector2(14, 74)
+centered = false
+
+[node name="角色等级框显示2" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=575694510]
+position = Vector2(100, 74)
+centered = false
+
+[node name="角色等级框显示3" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=752544222]
+position = Vector2(186, 74)
+centered = false
+
+[node name="角色等级框显示4" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=1412349892]
+position = Vector2(272, 74)
+centered = false
+
+[node name="角色等级框显示5" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=1611997564]
+position = Vector2(14, 160)
+centered = false
+
+[node name="角色等级框显示6" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=1208740045]
+position = Vector2(100, 160)
+centered = false
+
+[node name="角色等级框显示7" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=1247595540]
+position = Vector2(186, 160)
+centered = false
+
+[node name="角色等级框显示8" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=762632438]
+position = Vector2(272, 160)
+centered = false
+
+[node name="角色等级框显示9" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=491306854]
+position = Vector2(14, 246)
+centered = false
+
+[node name="角色等级框显示10" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=1726943065]
+position = Vector2(100, 246)
+centered = false
+
+[node name="角色等级框显示11" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=1180638107]
+position = Vector2(186, 246)
+centered = false
+
+[node name="角色等级框显示12" type="Sprite2D" parent="UI内容节点/角色等级框显示集合" unique_id=218387771]
+position = Vector2(272, 246)
+centered = false
+
+[node name="角色图标显示集合" type="Node2D" parent="UI内容节点" unique_id=1380405602]
+
+[node name="角色图标显示1" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=794363776]
+position = Vector2(17, 77)
+centered = false
+
+[node name="角色图标显示2" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=459232412]
+position = Vector2(103, 77)
+centered = false
+
+[node name="角色图标显示3" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=1056620942]
+position = Vector2(189, 77)
+centered = false
+
+[node name="角色图标显示4" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=30517707]
+position = Vector2(275, 77)
+centered = false
+
+[node name="角色图标显示5" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=2037558429]
+position = Vector2(17, 163)
+centered = false
+
+[node name="角色图标显示6" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=1503084382]
+position = Vector2(103, 163)
+centered = false
+
+[node name="角色图标显示7" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=1897762119]
+position = Vector2(189, 163)
+centered = false
+
+[node name="角色图标显示8" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=1314251177]
+position = Vector2(275, 163)
+centered = false
+
+[node name="角色图标显示9" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=1854593360]
+position = Vector2(17, 249)
+centered = false
+
+[node name="角色图标显示10" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=1466245020]
+position = Vector2(103, 249)
+centered = false
+
+[node name="角色图标显示11" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=1947989780]
+position = Vector2(189, 249)
+centered = false
+
+[node name="角色图标显示12" type="Sprite2D" parent="UI内容节点/角色图标显示集合" unique_id=2138814992]
+position = Vector2(275, 249)
+centered = false
+
+[node name="选中指示图片" type="Sprite2D" parent="UI内容节点" unique_id=1173582334]
+position = Vector2(-84.333336, 2.3333335)
+texture = ExtResource("3_vnely")
+centered = false
+
+[node name="图标连接点集合" type="Node2D" parent="UI内容节点" unique_id=919371509]
+
+[node name="图标连接点1" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=102119068]
+position = Vector2(12, 72)
+
+[node name="图标连接点2" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=1088795027]
+position = Vector2(98, 72)
+
+[node name="图标连接点3" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=553550587]
+position = Vector2(184, 72)
+
+[node name="图标连接点4" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=1566660323]
+position = Vector2(270, 72)
+
+[node name="图标连接点5" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=1273208665]
+position = Vector2(12, 158)
+
+[node name="图标连接点6" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=958315092]
+position = Vector2(98, 158)
+
+[node name="图标连接点7" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=1818291080]
+position = Vector2(184, 158)
+
+[node name="图标连接点8" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=195997215]
+position = Vector2(270, 158)
+
+[node name="图标连接点9" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=1878486645]
+position = Vector2(12, 244)
+
+[node name="图标连接点10" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=246748785]
+position = Vector2(98, 244)
+
+[node name="图标连接点11" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=1568665084]
+position = Vector2(184, 244)
+
+[node name="图标连接点12" type="Marker2D" parent="UI内容节点/图标连接点集合" unique_id=1448890149]
+position = Vector2(270, 244)
+
+[node name="角色类型筛选连接点集合" type="Node2D" parent="UI内容节点" unique_id=1719110976]
+
+[node name="角色类型筛选连接点1" type="Marker2D" parent="UI内容节点/角色类型筛选连接点集合" unique_id=946493655]
+position = Vector2(91.00001, 9)
+
+[node name="滑动条图片显示" type="Sprite2D" parent="UI内容节点" unique_id=1103356407]
+position = Vector2(4, 18)
+texture = ExtResource("4_7llve")
+centered = false
+
+[node name="滑动条起始连接点" type="Marker2D" parent="UI内容节点" unique_id=2062680853]
+position = Vector2(4, 18)

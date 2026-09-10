@@ -1,0 +1,660 @@
+[gd_scene format=3 uid="uid://db3atjovxjjod"]
+
+[ext_resource type="Script" uid="uid://dan7ug3cclev4" path="res://脚本/UI脚本/UI_背包界面脚本.gd" id="1_g3ybd"]
+[ext_resource type="Texture2D" uid="uid://6g332sn15f7j" path="res://图片资源/UI/杂项/黑幕20x20.png" id="2_8rj24"]
+[ext_resource type="Texture2D" uid="uid://bm7tikuhrk3p6" path="res://图片资源/UI/杂项/背包界面-Sheet.png" id="2_gw74o"]
+[ext_resource type="Texture2D" uid="uid://d1jnfc1wi5q80" path="res://图片资源/UI/杂项/展示框选中.png" id="3_g3ybd"]
+[ext_resource type="Texture2D" uid="uid://doqv2nvr4ojrr" path="res://图片资源/UI/杂项/滑动条.png" id="4_gw74o"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="5_p3jae"]
+[ext_resource type="Script" uid="uid://b4vj4osupvpvh" path="res://脚本/通用脚本/RichTextLabel脚本_按键滚动.gd" id="6_pbu0v"]
+
+[node name="UI_背包界面" type="Control" unique_id=1035214181]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_g3ybd")
+
+[node name="拦截点击区域" type="Control" parent="." unique_id=2085168350]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="当前道具名称显示" type="RichTextLabel" parent="." unique_id=841763660]
+z_index = 1
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 435.0
+offset_right = 1440.0
+offset_bottom = 517.0
+pivot_offset = Vector2(-12, -12)
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 32
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="当前道具描述显示" type="RichTextLabel" parent="." unique_id=1868975818]
+z_index = 1
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 522.0
+offset_right = 1440.0
+offset_bottom = 906.0
+pivot_offset = Vector2(-12, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+autowrap_mode = 1
+script = ExtResource("6_pbu0v")
+
+[node name="玩家属性名称显示" type="RichTextLabel" parent="." unique_id=1142782479]
+z_index = 1
+layout_mode = 0
+offset_left = 1521.0
+offset_top = 51.0
+offset_right = 1731.0
+offset_bottom = 659.0
+pivot_offset = Vector2(-15, -15)
+mouse_filter = 2
+theme_override_constants/line_separation = 18
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试1
+测试2
+测试3"
+scroll_active = false
+script = ExtResource("6_pbu0v")
+"滚动条宽度" = 0
+"轨道左右边距" = 0
+
+[node name="玩家属性数值显示" type="RichTextLabel" parent="." unique_id=539616658]
+z_index = 1
+layout_mode = 0
+offset_left = 1665.0
+offset_top = 51.0
+offset_right = 1875.0
+offset_bottom = 659.0
+pivot_offset = Vector2(225, -15)
+mouse_filter = 2
+theme_override_constants/line_separation = 18
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "1.1
+2.2
+3.3"
+scroll_active = false
+horizontal_alignment = 2
+script = ExtResource("6_pbu0v")
+"滚动条宽度" = 0
+"轨道左右边距" = 0
+
+[node name="背包界面固定文本" type="RichTextLabel" parent="." unique_id=606929201]
+z_index = 1
+layout_mode = 0
+offset_left = 1521.0
+offset_top = 855.0
+offset_right = 1875.0
+offset_bottom = 1029.0
+pivot_offset = Vector2(-15, -15)
+mouse_filter = 2
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 32
+text = "测试"
+script = ExtResource("6_pbu0v")
+"文本受设备类型控制" = true
+"设备类型文本1" = "背包界面固定文本1"
+"设备类型文本2" = "背包界面固定文本2"
+
+[node name="背包道具数量显示集合" type="Control" parent="." unique_id=899896933]
+z_index = 1
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="背包道具数量显示1" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1330710250]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 36.0
+offset_right = 267.0
+offset_bottom = 258.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+text = "1234567"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示2" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1999501529]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 36.0
+offset_right = 525.0
+offset_bottom = 258.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示3" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=303943063]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 36.0
+offset_right = 783.0
+offset_bottom = 258.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示4" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=156354635]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 36.0
+offset_right = 1041.0
+offset_bottom = 258.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示5" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1701581767]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 294.0
+offset_right = 267.0
+offset_bottom = 516.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示6" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1913231093]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 294.0
+offset_right = 525.0
+offset_bottom = 516.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示7" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=402912315]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 294.0
+offset_right = 783.0
+offset_bottom = 516.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示8" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1606780133]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 294.0
+offset_right = 1041.0
+offset_bottom = 516.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示9" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1163473366]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 552.0
+offset_right = 267.0
+offset_bottom = 774.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示10" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=2006393051]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 552.0
+offset_right = 525.0
+offset_bottom = 774.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示11" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1607905086]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 552.0
+offset_right = 783.0
+offset_bottom = 774.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示12" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=135536289]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 552.0
+offset_right = 1041.0
+offset_bottom = 774.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示13" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1541643162]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 810.0
+offset_right = 267.0
+offset_bottom = 1032.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示14" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1922137792]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 810.0
+offset_right = 525.0
+offset_bottom = 1032.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示15" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=1094588449]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 810.0
+offset_right = 783.0
+offset_bottom = 1032.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="背包道具数量显示16" type="RichTextLabel" parent="背包道具数量显示集合" unique_id=17067450]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 810.0
+offset_right = 1041.0
+offset_bottom = 1032.0
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_p3jae")
+theme_override_font_sizes/normal_font_size = 60
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("6_pbu0v")
+
+[node name="UI内容节点" type="Node2D" parent="." unique_id=179378103]
+scale = Vector2(3, 3)
+
+[node name="黑幕图片" type="Sprite2D" parent="UI内容节点" unique_id=933311397]
+scale = Vector2(31.999996, 18)
+texture = ExtResource("2_8rj24")
+centered = false
+
+[node name="图片" type="Sprite2D" parent="UI内容节点" unique_id=712170246]
+texture = ExtResource("2_gw74o")
+centered = false
+
+[node name="当前道具等级框显示" type="Sprite2D" parent="UI内容节点" unique_id=1897718305]
+position = Vector2(388, 51)
+centered = false
+
+[node name="当前道具图标显示" type="Sprite2D" parent="UI内容节点" unique_id=21872301]
+position = Vector2(388, 51)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具等级框显示集合" type="Node2D" parent="UI内容节点" unique_id=2023963816]
+
+[node name="背包道具等级框显示1" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=2139374112]
+position = Vector2(14, 12)
+centered = false
+
+[node name="背包道具等级框显示2" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=575694510]
+position = Vector2(100, 12)
+centered = false
+
+[node name="背包道具等级框显示3" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=752544222]
+position = Vector2(186, 12)
+centered = false
+
+[node name="背包道具等级框显示4" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=1412349892]
+position = Vector2(272, 12)
+centered = false
+
+[node name="背包道具等级框显示5" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=554397858]
+position = Vector2(14, 98)
+centered = false
+
+[node name="背包道具等级框显示6" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=1736732246]
+position = Vector2(100, 98)
+centered = false
+
+[node name="背包道具等级框显示7" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=854329348]
+position = Vector2(186, 98)
+centered = false
+
+[node name="背包道具等级框显示8" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=677142484]
+position = Vector2(272, 98)
+centered = false
+
+[node name="背包道具等级框显示9" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=1075615732]
+position = Vector2(14, 184)
+centered = false
+
+[node name="背包道具等级框显示10" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=2021141520]
+position = Vector2(100, 184)
+centered = false
+
+[node name="背包道具等级框显示11" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=1474583150]
+position = Vector2(186, 184)
+centered = false
+
+[node name="背包道具等级框显示12" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=35983716]
+position = Vector2(272, 184)
+centered = false
+
+[node name="背包道具等级框显示13" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=11648852]
+position = Vector2(14, 270)
+centered = false
+
+[node name="背包道具等级框显示14" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=1704029658]
+position = Vector2(100, 270)
+centered = false
+
+[node name="背包道具等级框显示15" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=2048455552]
+position = Vector2(186, 270)
+centered = false
+
+[node name="背包道具等级框显示16" type="Sprite2D" parent="UI内容节点/背包道具等级框显示集合" unique_id=767584137]
+position = Vector2(272, 270)
+centered = false
+
+[node name="背包道具图标显示集合" type="Node2D" parent="UI内容节点" unique_id=1380405602]
+
+[node name="背包道具图标显示1" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1568038122]
+position = Vector2(14, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示2" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=2108931243]
+position = Vector2(100, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示3" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1714829911]
+position = Vector2(186, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示4" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1087366699]
+position = Vector2(272, 12)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示5" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=71772660]
+position = Vector2(14, 98)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示6" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=441810384]
+position = Vector2(100, 98)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示7" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1343635407]
+position = Vector2(186, 98)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示8" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1696572484]
+position = Vector2(272, 98)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示9" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=2040363172]
+position = Vector2(14, 184)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示10" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1744197089]
+position = Vector2(100, 184)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示11" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=428028798]
+position = Vector2(186, 184)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示12" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=2145475225]
+position = Vector2(272, 184)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示13" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=218293277]
+position = Vector2(14, 270)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示14" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=759587813]
+position = Vector2(100, 270)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示15" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1722971664]
+position = Vector2(186, 270)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="背包道具图标显示16" type="Sprite2D" parent="UI内容节点/背包道具图标显示集合" unique_id=1132272583]
+position = Vector2(272, 270)
+centered = false
+offset = Vector2(3, 3)
+
+[node name="选中指示图片" type="Sprite2D" parent="UI内容节点" unique_id=1173582334]
+z_index = 2
+position = Vector2(-80, 2)
+texture = ExtResource("3_g3ybd")
+centered = false
+offset = Vector2(-2, -2)
+
+[node name="滑动条图片显示" type="Sprite2D" parent="UI内容节点" unique_id=2079049542]
+position = Vector2(4, 18)
+texture = ExtResource("4_gw74o")
+centered = false
+
+[node name="滑动条起始连接点" type="Marker2D" parent="UI内容节点" unique_id=1547091280]
+position = Vector2(4, 18)
+
+[node name="背包道具图标区域集合" type="Control" parent="UI内容节点" unique_id=323371513]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="背包道具图标区域1" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=1846589448]
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 90.0
+
+[node name="背包道具图标区域2" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=868330459]
+anchors_preset = 0
+offset_left = 100.0
+offset_top = 12.0
+offset_right = 178.0
+offset_bottom = 90.0
+
+[node name="背包道具图标区域3" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=1269825718]
+anchors_preset = 0
+offset_left = 186.0
+offset_top = 12.0
+offset_right = 264.0
+offset_bottom = 90.0
+
+[node name="背包道具图标区域4" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=90955205]
+anchors_preset = 0
+offset_left = 272.0
+offset_top = 12.0
+offset_right = 350.0
+offset_bottom = 90.0
+
+[node name="背包道具图标区域5" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=127975977]
+anchors_preset = 0
+offset_left = 13.999999
+offset_top = 98.0
+offset_right = 92.0
+offset_bottom = 176.0
+
+[node name="背包道具图标区域6" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=69828237]
+anchors_preset = 0
+offset_left = 100.00001
+offset_top = 98.0
+offset_right = 178.00003
+offset_bottom = 176.0
+
+[node name="背包道具图标区域7" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=1278930989]
+anchors_preset = 0
+offset_left = 185.99998
+offset_top = 98.0
+offset_right = 263.99994
+offset_bottom = 176.0
+
+[node name="背包道具图标区域8" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=945210662]
+anchors_preset = 0
+offset_left = 272.00003
+offset_top = 98.0
+offset_right = 350.00003
+offset_bottom = 176.0
+
+[node name="背包道具图标区域9" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=1437059988]
+anchors_preset = 0
+offset_left = 14.000001
+offset_top = 184.0
+offset_right = 92.0
+offset_bottom = 262.0
+
+[node name="背包道具图标区域10" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=18891223]
+anchors_preset = 0
+offset_left = 100.0
+offset_top = 184.0
+offset_right = 178.0
+offset_bottom = 262.0
+
+[node name="背包道具图标区域11" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=604974015]
+anchors_preset = 0
+offset_left = 186.0
+offset_top = 184.0
+offset_right = 264.0
+offset_bottom = 262.0
+
+[node name="背包道具图标区域12" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=1223508697]
+anchors_preset = 0
+offset_left = 272.0
+offset_top = 184.0
+offset_right = 350.0
+offset_bottom = 262.0
+
+[node name="背包道具图标区域13" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=122042715]
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 270.00003
+offset_right = 92.0
+offset_bottom = 348.00003
+
+[node name="背包道具图标区域14" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=2767339]
+anchors_preset = 0
+offset_left = 100.00001
+offset_top = 270.00003
+offset_right = 178.00003
+offset_bottom = 348.00003
+
+[node name="背包道具图标区域15" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=1034870639]
+anchors_preset = 0
+offset_left = 185.99998
+offset_top = 270.00003
+offset_right = 263.99994
+offset_bottom = 348.00003
+
+[node name="背包道具图标区域16" type="Control" parent="UI内容节点/背包道具图标区域集合" unique_id=2145700106]
+anchors_preset = 0
+offset_left = 272.00003
+offset_top = 270.00003
+offset_right = 350.00003
+offset_bottom = 348.00003

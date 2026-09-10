@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bp65q0n4c8nid"]
+
+[ext_resource type="Script" uid="uid://bcq5iu3rwktbj" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_罪恶值.gd" id="1_1sc5t"]
+[ext_resource type="Texture2D" uid="uid://d0ywovx0ng3dd" path="res://图片资源/UI/状态栏相关/状态栏_特殊图标_罪恶值底层.png" id="2_67jh6"]
+[ext_resource type="Texture2D" uid="uid://c0uq0yjdsn8e" path="res://图片资源/UI/状态栏相关/状态栏_特殊图标_罪恶值条状物.png" id="3_c3yqj"]
+[ext_resource type="Texture2D" uid="uid://dv2dc6n33entv" path="res://图片资源/UI/状态栏相关/状态栏_特殊图标_罪恶值外框.png" id="4_4ni4i"]
+[ext_resource type="Texture2D" uid="uid://dhfopkq87pa8h" path="res://图片资源/UI/状态栏相关/状态栏_特殊图标_罪恶值前饰.png" id="5_1sc5t"]
+
+[node name="UI_状态栏_额外UI_罪恶值" type="Node2D" unique_id=50675888]
+
+[node name="放大节点_x6" type="Node2D" parent="." unique_id=124521339]
+scale = Vector2(6, 6)
+script = ExtResource("1_1sc5t")
+
+[node name="底层" type="Sprite2D" parent="放大节点_x6" unique_id=1366685246]
+position = Vector2(-81.000015, 9)
+scale = Vector2(80.000015, 1)
+texture = ExtResource("2_67jh6")
+centered = false
+
+[node name="左区间1" type="ColorRect" parent="放大节点_x6" unique_id=1527404454]
+offset_left = -81.0
+offset_top = 9.0
+offset_right = -80.0
+offset_bottom = 15.0
+
+[node name="左区间2" type="ColorRect" parent="放大节点_x6" unique_id=1549675427]
+offset_left = -44.0
+offset_top = 9.0
+offset_right = -43.0
+offset_bottom = 15.0
+
+[node name="右区间2" type="ColorRect" parent="放大节点_x6" unique_id=1117715260]
+offset_left = -39.0
+offset_top = 9.0
+offset_right = -38.0
+offset_bottom = 15.0
+
+[node name="右区间1" type="ColorRect" parent="放大节点_x6" unique_id=1292005812]
+offset_left = -2.0
+offset_top = 9.0
+offset_right = -1.0
+offset_bottom = 15.0
+
+[node name="条状物" type="Sprite2D" parent="放大节点_x6" unique_id=358996528]
+position = Vector2(-81, 9)
+scale = Vector2(80, 1)
+texture = ExtResource("3_c3yqj")
+centered = false
+
+[node name="外框" type="Sprite2D" parent="放大节点_x6" unique_id=712170246]
+position = Vector2(-82, 0)
+texture = ExtResource("4_4ni4i")
+centered = false
+
+[node name="前饰" type="Sprite2D" parent="放大节点_x6" unique_id=231143457]
+position = Vector2(-82, 0)
+texture = ExtResource("5_1sc5t")
+centered = false

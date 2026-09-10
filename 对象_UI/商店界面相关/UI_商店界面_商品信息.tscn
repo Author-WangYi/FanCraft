@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://dh3urtudjwi11"]
+
+[ext_resource type="Script" uid="uid://b8r4f4swwnb2a" path="res://脚本/UI脚本/商店界面相关/UI_商店界面脚本_商品信息.gd" id="1_hel6r"]
+[ext_resource type="Texture2D" uid="uid://1pcy0m3kwjwp" path="res://图片资源/UI/背包与技能界面相关/背包_展示框底层.png" id="2_x5dbg"]
+[ext_resource type="Texture2D" uid="uid://1x2d6j87a7u" path="res://图片资源/UI/背包与技能界面相关/背包_当前信息框体.png" id="3_7ftwo"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="4_1j27e"]
+[ext_resource type="Texture2D" uid="uid://b7pantpcg8s3k" path="res://图片资源/UI/商店界面相关/商店_购买选项框体.png" id="4_gpu8o"]
+[ext_resource type="Texture2D" uid="uid://dkb3nr2q48yyq" path="res://图片资源/UI/商店界面相关/商店_金钱图标.png" id="5_atabc"]
+[ext_resource type="Script" uid="uid://b4vj4osupvpvh" path="res://脚本/通用脚本/RichTextLabel脚本_按键滚动.gd" id="5_gpu8o"]
+[ext_resource type="Texture2D" uid="uid://3kjset36348c" path="res://图片资源/UI/商店界面相关/商店_购买选中.png" id="6_arofq"]
+[ext_resource type="FontFile" uid="uid://cpragr124shnu" path="res://字体/位图字体/位图字体1.fnt" id="9_gpu8o"]
+
+[node name="UI_商店界面脚本_商品信息" type="Node2D" unique_id=530647751]
+script = ExtResource("1_hel6r")
+
+[node name="放大节点_3倍" type="Node2D" parent="." unique_id=393186718]
+scale = Vector2(3, 3)
+
+[node name="底层" type="Sprite2D" parent="放大节点_3倍" unique_id=435681197]
+position = Vector2(57, 39)
+texture = ExtResource("2_x5dbg")
+
+[node name="信息框体" type="Sprite2D" parent="放大节点_3倍" unique_id=1382232914]
+position = Vector2(57, 173)
+texture = ExtResource("3_7ftwo")
+
+[node name="等级展示框" type="Sprite2D" parent="放大节点_3倍" unique_id=287660643]
+position = Vector2(57, 39)
+
+[node name="物品图标" type="Sprite2D" parent="放大节点_3倍" unique_id=1534673994]
+position = Vector2(57, 39)
+
+[node name="购买选项框体" type="Sprite2D" parent="放大节点_3倍" unique_id=227154127]
+position = Vector2(57, 280)
+texture = ExtResource("4_gpu8o")
+
+[node name="金币图标" type="Sprite2D" parent="放大节点_3倍" unique_id=184569436]
+position = Vector2(38, 280)
+texture = ExtResource("5_atabc")
+
+[node name="选中图片" type="Sprite2D" parent="放大节点_3倍" unique_id=176672048]
+visible = false
+position = Vector2(57, 280)
+texture = ExtResource("6_arofq")
+
+[node name="数量显示" type="RichTextLabel" parent="放大节点_3倍" unique_id=235190137]
+offset_left = 21.0
+offset_top = 3.0
+offset_right = 93.0
+offset_bottom = 75.0
+pivot_offset = Vector2(36, 36)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("9_gpu8o")
+theme_override_font_sizes/normal_font_size = 20
+text = "0721"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="gui输入区域" type="Control" parent="放大节点_3倍" unique_id=2035714080]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 268.0
+offset_right = 90.0
+offset_bottom = 292.0
+
+[node name="名称显示" type="RichTextLabel" parent="." unique_id=395926256]
+z_index = 1
+offset_left = 9.0
+offset_top = 279.0
+offset_right = 333.0
+offset_bottom = 363.0
+pivot_offset = Vector2(-9, -9)
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_1j27e")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试文本测试文本"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="描述显示" type="RichTextLabel" parent="." unique_id=660183182]
+z_index = 1
+offset_left = 9.0
+offset_top = 369.0
+offset_right = 333.0
+offset_bottom = 756.0
+pivot_offset = Vector2(-9, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_1j27e")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试.角色描述
+角色描述角色描述角色描述"
+autowrap_mode = 1
+script = ExtResource("5_gpu8o")
+
+[node name="价格显示" type="RichTextLabel" parent="." unique_id=918999990]
+z_index = 1
+offset_left = 132.0
+offset_top = 804.0
+offset_right = 270.0
+offset_bottom = 876.0
+pivot_offset = Vector2(-9, -9)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("4_1j27e")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "0721"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

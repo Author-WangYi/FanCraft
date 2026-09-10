@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c51xmh1ghoo3r"]
+
+[ext_resource type="Script" uid="uid://dghlpl4wdcn6n" path="res://脚本/UI脚本/技能界面相关/UI_技能界面脚本.gd" id="1_xces8"]
+[ext_resource type="PackedScene" uid="uid://sgxrj33jboy4" path="res://对象_UI/技能界面相关/UI_技能界面_键位上技能格子.tscn" id="5_s5aok"]
+[ext_resource type="PackedScene" uid="uid://dhbqvw1e2w6l7" path="res://对象_UI/技能界面相关/UI_技能界面_当前键位技能格子.tscn" id="6_rnr1f"]
+[ext_resource type="PackedScene" uid="uid://bvaqp7fqqkql3" path="res://对象_UI/技能界面相关/UI_技能界面_当前键位滑动条.tscn" id="7_1bd1a"]
+[ext_resource type="PackedScene" uid="uid://14fg24xcktfk" path="res://对象_UI/技能界面相关/UI_技能界面_当前技能信息.tscn" id="8_hi6tv"]
+[ext_resource type="PackedScene" uid="uid://b4m3otns3qwmk" path="res://对象_UI/通用相关/UI_通用_玩家属性信息.tscn" id="9_3mtdy"]
+[ext_resource type="PackedScene" uid="uid://d10y4ffu67kux" path="res://对象_UI/通用相关/UI_通用_固定文本信息.tscn" id="10_6b7n3"]
+[ext_resource type="PackedScene" uid="uid://ccw8hx81xvpt4" path="res://对象_UI/技能界面相关/UI_技能界面_继续下一波选项格子.tscn" id="10_xces8"]
+
+[node name="UI_技能界面" type="Control" unique_id=1035214181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xces8")
+
+[node name="拦截点击区域" type="Control" parent="." unique_id=2085168350]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="黑幕图片" type="ColorRect" parent="." unique_id=1904288246]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="分类节点1" type="Node2D" parent="." unique_id=1400366165]
+
+[node name="键位上技能格子集合" type="Node2D" parent="分类节点1" unique_id=382951932]
+
+[node name="键位上技能格子1" parent="分类节点1/键位上技能格子集合" unique_id=530647751 instance=ExtResource("5_s5aok")]
+position = Vector2(42, 306)
+
+[node name="键位上技能格子2" parent="分类节点1/键位上技能格子集合" unique_id=784238003 instance=ExtResource("5_s5aok")]
+position = Vector2(300, 306)
+"格子序号" = 2
+
+[node name="键位上技能格子3" parent="分类节点1/键位上技能格子集合" unique_id=1206896601 instance=ExtResource("5_s5aok")]
+position = Vector2(558, 306)
+"格子序号" = 3
+
+[node name="键位上技能格子4" parent="分类节点1/键位上技能格子集合" unique_id=1010805695 instance=ExtResource("5_s5aok")]
+position = Vector2(816, 306)
+"格子序号" = 4
+
+[node name="当前键位背包格子集合" type="Node2D" parent="分类节点1" unique_id=620724777]
+
+[node name="当前键位背包格子1" parent="分类节点1/当前键位背包格子集合" unique_id=1910029819 instance=ExtResource("6_rnr1f")]
+position = Vector2(171, 753)
+"格子序号" = 1
+
+[node name="当前键位背包格子2" parent="分类节点1/当前键位背包格子集合" unique_id=3915451 instance=ExtResource("6_rnr1f")]
+position = Vector2(429, 753)
+"格子序号" = 2
+
+[node name="当前键位背包格子3" parent="分类节点1/当前键位背包格子集合" unique_id=28876277 instance=ExtResource("6_rnr1f")]
+position = Vector2(687, 753)
+"格子序号" = 3
+
+[node name="当前键位背包滑动条" parent="分类节点1/当前键位背包格子集合" unique_id=1462332242 instance=ExtResource("7_1bd1a")]
+position = Vector2(189, 1008)
+scale = Vector2(3, 3)
+
+[node name="当前技能信息" parent="分类节点1" unique_id=1362851772 instance=ExtResource("8_hi6tv")]
+position = Vector2(1110, 153)
+
+[node name="玩家属性信息" parent="分类节点1" unique_id=1476312908 instance=ExtResource("9_3mtdy")]
+position = Vector2(1506, 36)
+
+[node name="固定文本信息" parent="分类节点1" unique_id=549576922 instance=ExtResource("10_6b7n3")]
+position = Vector2(1506, 840)
+
+[node name="继续下一波选项格子" parent="分类节点1" unique_id=2024187812 instance=ExtResource("10_xces8")]
+position = Vector2(1125, 960)
+
+[node name="分类节点3" type="Node2D" parent="." unique_id=806128641]
+
+[editable path="分类节点1/固定文本信息"]

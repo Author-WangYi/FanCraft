@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cxsruy7j0g770"]
+
+[ext_resource type="Texture2D" uid="uid://d4iobkkeg3lcl" path="res://图片资源/UI/状态栏相关/状态栏_特殊图标_千本樱.png" id="1_6t1uj"]
+[ext_resource type="FontFile" uid="uid://cpragr124shnu" path="res://字体/位图字体/位图字体1.fnt" id="2_362ox"]
+[ext_resource type="Script" uid="uid://c3oivrwcv28m4" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_玩家角色数值类.gd" id="3_6bvyu"]
+
+[node name="UI_状态栏_额外UI_千本樱" type="Node2D" unique_id=880001931]
+
+[node name="图标" type="Sprite2D" parent="." unique_id=712170246]
+scale = Vector2(6, 6)
+texture = ExtResource("1_6t1uj")
+centered = false
+
+[node name="数值" type="RichTextLabel" parent="." unique_id=18333683]
+offset_left = 66.0
+offset_right = 90.0
+offset_bottom = 22.0
+scale = Vector2(3, 3)
+theme_override_fonts/normal_font = ExtResource("2_362ox")
+theme_override_font_sizes/normal_font_size = 16
+text = "0721"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_6bvyu")
+"变量名称" = "千本樱次数"

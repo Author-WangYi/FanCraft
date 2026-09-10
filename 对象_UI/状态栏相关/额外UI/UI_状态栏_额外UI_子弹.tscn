@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bd34tuby5exuj"]
+
+[ext_resource type="Texture2D" uid="uid://dcfmip3lame8u" path="res://图片资源/UI/状态栏相关/状态栏_特殊图标_子弹图标.png" id="1_qeux4"]
+[ext_resource type="FontFile" uid="uid://cpragr124shnu" path="res://字体/位图字体/位图字体1.fnt" id="2_yr4ac"]
+[ext_resource type="Script" uid="uid://c3oivrwcv28m4" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本_玩家角色数值类.gd" id="3_fl2wh"]
+
+[node name="UI_状态栏_额外UI_子弹" type="Node2D" unique_id=880001931]
+
+[node name="图标" type="Sprite2D" parent="." unique_id=712170246]
+position = Vector2(0, -6)
+scale = Vector2(6, 6)
+texture = ExtResource("1_qeux4")
+centered = false
+
+[node name="数值" type="RichTextLabel" parent="." unique_id=18333683]
+offset_left = 66.0
+offset_right = 90.0
+offset_bottom = 22.0
+scale = Vector2(3, 3)
+theme_override_fonts/normal_font = ExtResource("2_yr4ac")
+theme_override_font_sizes/normal_font_size = 16
+text = "0721"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_fl2wh")
+"变量名称" = "子弹数量"

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://duo5gtrl0lwxq"]
+
+[ext_resource type="Script" uid="uid://crblg13o6e04u" path="res://脚本/UI脚本/状态栏相关/UI_状态栏脚本.gd" id="1_dl0g8"]
+[ext_resource type="PackedScene" uid="uid://dhfe3omgwambr" path="res://对象_UI/状态栏相关/UI_状态栏_生命值.tscn" id="2_dfe24"]
+[ext_resource type="PackedScene" uid="uid://bpf4fmsqgrtaj" path="res://对象_UI/状态栏相关/UI_状态栏_金钱数.tscn" id="2_n5gmo"]
+[ext_resource type="PackedScene" uid="uid://djldh6x4updsd" path="res://对象_UI/状态栏相关/UI_状态栏_波次倒计时.tscn" id="3_dfe24"]
+[ext_resource type="PackedScene" uid="uid://cct084tg0ouk2" path="res://对象_UI/状态栏相关/UI_状态栏_技能状态栏.tscn" id="4_h0ywj"]
+[ext_resource type="PackedScene" uid="uid://vyqqf0du6gb" path="res://对象_UI/状态栏相关/UI_状态栏_经验条.tscn" id="5_ml16c"]
+
+[node name="UI_状态栏" type="Control" unique_id=1035214181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dl0g8")
+
+[node name="UI_状态栏_生命值" parent="." unique_id=179838721 instance=ExtResource("2_dfe24")]
+position = Vector2(72, 84)
+metadata/_edit_use_anchors_ = true
+
+[node name="UI_状态栏_金钱数" parent="." unique_id=1485114781 instance=ExtResource("2_n5gmo")]
+position = Vector2(72, 186)
+
+[node name="UI_状态栏_波次倒计时" parent="." unique_id=606096281 instance=ExtResource("3_dfe24")]
+position = Vector2(960, 60)
+
+[node name="UI_状态栏_技能状态栏" parent="." unique_id=254555334 instance=ExtResource("4_h0ywj")]
+position = Vector2(960, 1080)
+
+[node name="UI_状态栏_经验条" parent="." unique_id=50675888 instance=ExtResource("5_ml16c")]
+position = Vector2(960, 1080)
+
+[node name="额外UI连接点集合" type="Node2D" parent="." unique_id=1736075736]
+
+[node name="特殊额外UI连接点1" type="Marker2D" parent="额外UI连接点集合" unique_id=1130857824]
+position = Vector2(1848, 84)
+
+[node name="左侧额外UI连接点1" type="Marker2D" parent="额外UI连接点集合" unique_id=1998677016]
+position = Vector2(84, 294)

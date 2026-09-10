@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://hx2odkhayu75"]
+
+[ext_resource type="Script" uid="uid://bayau1senvegb" path="res://脚本/UI脚本/标题界面相关/UI_标题界面脚本.gd" id="1_7nqbl"]
+[ext_resource type="Texture2D" uid="uid://bbdxp0iy2ywfj" path="res://图片资源/UI/标题界面相关/标题界面_文字图标.png" id="4_ajj73"]
+[ext_resource type="PackedScene" uid="uid://cmxpiscfob07x" path="res://对象_UI/UI_版本号显示.tscn" id="4_omnbf"]
+[ext_resource type="PackedScene" uid="uid://6ykpvsoi7ojt" path="res://对象_UI/UI_小提示显示.tscn" id="5_qxlt7"]
+[ext_resource type="PackedScene" uid="uid://f7hjxexykbo1" path="res://对象_UI/标题界面相关/UI_标题界面_选项.tscn" id="5_wpkiv"]
+
+[node name="UI_标题界面" type="Control" unique_id=1035214181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7nqbl")
+
+[node name="拦截点击区域" type="Control" parent="." unique_id=885071394]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="黑幕图片" type="ColorRect" parent="." unique_id=832874737]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="文字标题" type="Sprite2D" parent="." unique_id=1702130772]
+position = Vector2(564, 192)
+scale = Vector2(12, 12)
+texture = ExtResource("4_ajj73")
+centered = false
+
+[node name="标题选项集合" type="Node2D" parent="." unique_id=213925096]
+
+[node name="标题选项1" parent="标题选项集合" unique_id=530647751 instance=ExtResource("5_wpkiv")]
+position = Vector2(252, 768)
+
+[node name="标题选项2" parent="标题选项集合" unique_id=63817172 instance=ExtResource("5_wpkiv")]
+position = Vector2(756, 768)
+"格子序号" = 2
+
+[node name="标题选项3" parent="标题选项集合" unique_id=142911617 instance=ExtResource("5_wpkiv")]
+position = Vector2(1260, 768)
+"格子序号" = 3
+
+[node name="UI_版本号显示" parent="." unique_id=1058237334 instance=ExtResource("4_omnbf")]
+position = Vector2(1920, 1080)
+
+[node name="UI_小提示显示" parent="." unique_id=1754372531 instance=ExtResource("5_qxlt7")]
+position = Vector2(12, 1068)

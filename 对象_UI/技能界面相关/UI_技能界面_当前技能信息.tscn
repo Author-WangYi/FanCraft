@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://14fg24xcktfk"]
+
+[ext_resource type="Texture2D" uid="uid://1pcy0m3kwjwp" path="res://图片资源/UI/背包与技能界面相关/背包_展示框底层.png" id="1_7yxvl"]
+[ext_resource type="Script" uid="uid://bsbx5ma70b2ra" path="res://脚本/UI脚本/技能界面相关/UI_技能界面脚本_当前技能信息.gd" id="1_lytpf"]
+[ext_resource type="Texture2D" uid="uid://1x2d6j87a7u" path="res://图片资源/UI/背包与技能界面相关/背包_当前信息框体.png" id="2_uab5n"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="3_hw67g"]
+[ext_resource type="Script" uid="uid://b4vj4osupvpvh" path="res://脚本/通用脚本/RichTextLabel脚本_按键滚动.gd" id="4_lytpf"]
+
+[node name="UI_技能界面_当前技能信息" type="Node2D" unique_id=530647751]
+script = ExtResource("1_lytpf")
+
+[node name="放大节点_3倍" type="Node2D" parent="." unique_id=393186718]
+scale = Vector2(3, 3)
+
+[node name="底层" type="Sprite2D" parent="放大节点_3倍" unique_id=435681197]
+position = Vector2(57, 39)
+texture = ExtResource("1_7yxvl")
+
+[node name="信息框体" type="Sprite2D" parent="放大节点_3倍" unique_id=1382232914]
+position = Vector2(57, 173)
+texture = ExtResource("2_uab5n")
+
+[node name="等级展示框" type="Sprite2D" parent="放大节点_3倍" unique_id=287660643]
+position = Vector2(57, 39)
+
+[node name="技能图标" type="Sprite2D" parent="放大节点_3倍" unique_id=1534673994]
+position = Vector2(57, 39)
+
+[node name="当前技能名称显示" type="RichTextLabel" parent="." unique_id=395926256]
+z_index = 1
+offset_left = 9.0
+offset_top = 279.0
+offset_right = 333.0
+offset_bottom = 363.0
+pivot_offset = Vector2(-9, -9)
+theme_override_colors/default_color = Color(1, 0.89411765, 0.6745098, 1)
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("3_hw67g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试文本测试文本"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="当前技能描述显示" type="RichTextLabel" parent="." unique_id=660183182]
+z_index = 1
+offset_left = 9.0
+offset_top = 369.0
+offset_right = 333.0
+offset_bottom = 756.0
+pivot_offset = Vector2(-9, -99)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("3_hw67g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "测试文本
+测试.角色描述
+角色描述角色描述角色描述"
+autowrap_mode = 1
+script = ExtResource("4_lytpf")

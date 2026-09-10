@@ -1,0 +1,47 @@
+[RichTextLabel]
+
+properties=PackedStringArray("theme_override_colors/default_color", "theme_override_constants/line_separation", "theme_override_fonts/normal_font", "theme_override_font_sizes/normal_font_size", "horizontal_alignment", "vertical_alignment", "theme_override_colors/font_outline_color", "theme_override_constants/outline_size", "scroll_active", "autowrap_mode", "fit_content", "scroll_following_visible_characters")
+
+[Control]
+
+properties=PackedStringArray("size", "position", "pivot_offset", "mouse_filter", "scale", "anchors_preset")
+
+[Label]
+
+properties=PackedStringArray("theme_override_fonts/font", "theme_override_font_sizes/font_size", "theme_override_colors/font_color", "horizontal_alignment", "vertical_alignment")
+
+[Camera2D]
+
+properties=PackedStringArray("zoom")
+
+[CollisionShape2D]
+
+properties=PackedStringArray("shape", "disabled")
+
+[CollisionObject2D]
+
+properties=PackedStringArray("collision_layer", "collision_mask")
+
+[Marker2D]
+
+properties=PackedStringArray("gizmo_extents")
+
+[Node2D]
+
+properties=PackedStringArray("scale", "position")
+
+[CanvasItem]
+
+properties=PackedStringArray("visible", "z_index", "modulate")
+
+[Sprite2D]
+
+properties=PackedStringArray("centered", "offset", "hframes", "vframes", "frame_coords", "texture")
+
+[Node]
+
+properties=PackedStringArray("process_mode")
+
+[SpriteBase3D]
+
+properties=PackedStringArray("texture_filter")

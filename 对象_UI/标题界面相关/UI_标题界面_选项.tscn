@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://f7hjxexykbo1"]
+
+[ext_resource type="Script" uid="uid://b0eres2yyxjdt" path="res://脚本/UI脚本/标题界面相关/UI_标题界面脚本_选项.gd" id="1_lmx5a"]
+[ext_resource type="Texture2D" uid="uid://bidq8hkktfvaf" path="res://图片资源/UI/标题界面相关/标题界面_选项框体.png" id="2_04wtj"]
+[ext_resource type="Texture2D" uid="uid://cuqs51wm1b48c" path="res://图片资源/UI/标题界面相关/标题界面_选中.png" id="3_nv4ky"]
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="8_v3p6v"]
+
+[node name="UI_标题界面脚本_选项" type="Node2D" unique_id=530647751]
+script = ExtResource("1_lmx5a")
+
+[node name="放大节点_12倍" type="Node2D" parent="." unique_id=393186718]
+scale = Vector2(12, 12)
+
+[node name="框体" type="Sprite2D" parent="放大节点_12倍" unique_id=1382232914]
+position = Vector2(17, 7)
+texture = ExtResource("2_04wtj")
+
+[node name="选中图片" type="Sprite2D" parent="放大节点_12倍" unique_id=176672048]
+visible = false
+position = Vector2(17, 7)
+texture = ExtResource("3_nv4ky")
+
+[node name="gui输入区域" type="Control" parent="放大节点_12倍" unique_id=2035714080]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 14.0
+
+[node name="选项文本" type="RichTextLabel" parent="." unique_id=918999990]
+offset_right = 408.0
+offset_bottom = 168.0
+pivot_offset = Vector2(-9, -9)
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("8_v3p6v")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "0721"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ctasri41in80u"]
+
+[ext_resource type="FontFile" uid="uid://b5im6darld82j" path="res://字体/中文像素字体.ttf" id="1_tfr0o"]
+[ext_resource type="Script" uid="uid://b0cu1uadwagns" path="res://脚本/UI脚本/通知框相关/UI_继续游戏选项通知框脚本.gd" id="1_wt86c"]
+[ext_resource type="Texture2D" uid="uid://crenqjmyjg3ji" path="res://图片资源/UI/通知框相关/通知框1.png" id="2_wt86c"]
+[ext_resource type="PackedScene" uid="uid://bt88imxjq0xnw" path="res://对象_UI/通知框相关/UI_继续游戏选项.tscn" id="4_4bewx"]
+
+[node name="UI_继续游戏选项通知框" type="Control" unique_id=1035214181]
+z_index = 6
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wt86c")
+
+[node name="通知文本" type="RichTextLabel" parent="." unique_id=389959302]
+z_index = 1
+layout_mode = 0
+offset_left = 639.0
+offset_top = 399.0
+offset_right = 1281.0
+offset_bottom = 567.0
+theme_override_constants/line_separation = 12
+theme_override_fonts/normal_font = ExtResource("1_tfr0o")
+theme_override_font_sizes/normal_font_size = 32
+text = "当前存档的游玩未结束
+是否继续？"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="背景图片" type="Sprite2D" parent="." unique_id=712170246]
+position = Vector2(621, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("2_wt86c")
+centered = false
+
+[node name="选项集合" type="Node2D" parent="." unique_id=619646611]
+
+[node name="选项1" parent="选项集合" unique_id=530647751 instance=ExtResource("4_4bewx")]
+position = Vector2(705, 591)
+
+[node name="选项2" parent="选项集合" unique_id=134046453 instance=ExtResource("4_4bewx")]
+position = Vector2(1017, 591)
+"格子序号" = 2

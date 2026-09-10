@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bkcxcfn17jct2"]
+
+[ext_resource type="Script" uid="uid://cdh7f35vqashm" path="res://脚本/UI脚本/UI_波次通过提示文字脚本.gd" id="1_0ov6y"]
+[ext_resource type="Texture2D" uid="uid://bt8fv0qqox4vf" path="res://图片资源/UI/杂项/通过提示图片字.png" id="2_0ov6y"]
+
+[node name="UI_波次通过提示文字" type="Control" unique_id=1035214181]
+z_index = 6
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0ov6y")
+
+[node name="黑幕图片" type="ColorRect" parent="." unique_id=1243140512]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="倒计时节点" type="Timer" parent="." unique_id=1213506708]
+one_shot = true
+
+[node name="放大节点_6倍" type="Node2D" parent="." unique_id=1156274227]
+scale = Vector2(6, 6)
+
+[node name="图片字" type="Sprite2D" parent="放大节点_6倍" unique_id=712170246]
+position = Vector2(160, 90)
+texture = ExtResource("2_0ov6y")
