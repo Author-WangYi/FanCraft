@@ -1,0 +1,50 @@
+THIRD-PARTY NOTICES / 第三方声明
+================================
+
+本文件汇总 FanCraft 仓库中随附的第三方字体及其授权信息。
+仓库根目录的 MIT 许可证不适用于下列字体文件；各字体按各自许可证授权。
+
+本目录内的许可证全文：
+  OFL-1.1.txt   SIL Open Font License, Version 1.1（官方原文）
+  UNLICENSE.txt The Unlicense（官方原文）
+
+------------------------------------------------------------
+LanaPixel.ttf
+------------------------------------------------------------
+
+LanaPixel 像素字体
+Copyright (c) 2020, eishiya (https://mastodon.art/@eishiya)
+with Reserved Font Name LanaPixel
+
+Licensed under the SIL Open Font License, Version 1.1.
+作者同时提供 CC BY 4.0 作为另一种选择；本仓库采用 SIL OFL 1.1。
+Full license text: OFL-1.1.txt
+Source: https://opengameart.org/content/lanapixel-localization-friendly-pixel-font
+Upstream license notice: https://github.com/tommyettinger/fonts/blob/main/LanaPixel-OpenFontLicense.txt
+
+------------------------------------------------------------
+中文像素字体.ttf
+------------------------------------------------------------
+
+mplus_hzk_13（文件内嵌字体名为 mplus_hzk_12）
+Copyright (c) 2020, op
+
+上游仓库以 The Unlicense 发布该字体。
+Full license text: UNLICENSE.txt
+Source: https://github.com/py-zhao/mplus_hzk_12
+(formerly: https://github.com/Luckeee/mplus_hzk_12)
+
+说明：该字体以 M+ 12 像素字体（SIL Open Font License 1.1）为基础，
+并用 HZK12 点阵字库补充汉字。因此本目录同时附上 OFL-1.1.txt。
+若修改并再分发此字体，请同时核对上游声明与 OFL 的相应条款。
+
+文件身份已核对：本文件 Git blob 哈希 f9fab58eef78f6f1d4b7a0a9bc6eaae3ac9c91ce
+与上游 mplus_hzk_13.ttf 完全一致。
+
+------------------------------------------------------------
+位图字体/位图字体1.fnt 与 位图字体1.png
+------------------------------------------------------------
+
+BMFont 图集（face 名为 "CustomFont"，含 14 个字符），为本仓库内生成的素材。
+仓库中未标注其第三方来源。若这些字形实际取自其他字体，请在此补充
+该字体的版权声明与许可证信息。
